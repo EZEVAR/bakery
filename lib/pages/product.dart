@@ -100,9 +100,7 @@ class MyProductPageState extends State<MyProductPage> {
                             initialPage: 0,
                             indicatorColor:
                                 const Color.fromARGB(255, 230, 223, 231),
-                            onPageChanged: (value) {
-                              print('Page changed: $value');
-                            },
+                            onPageChanged: (value) {},
                             autoPlayInterval: 5000,
                             isLoop: true,
                             children: [
