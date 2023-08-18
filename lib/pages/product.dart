@@ -52,14 +52,6 @@ class MyProductPageState extends State<MyProductPage> {
           actions: [
             IconButton(
               icon: const Icon(
-                Icons.search,
-                color: Colors.green,
-                size: 30,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.red,
                 size: 30,
