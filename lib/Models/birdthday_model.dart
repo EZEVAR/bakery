@@ -21,7 +21,7 @@ class BirthdayModel {
         flavor: 'Strawberry',
         price: '\$2000',
         color: Colors.red,
-        imagePath: 'assets/birthdaycake/b1.jpeg'),
+        imagePath: 'bakery/assets/birthdaycake/b1.jpeg'),
     BirthdayModel(
         flavor: 'happy cake',
         price: '\$1800',
