@@ -15,13 +15,13 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
-    final _router = AppRouter();
+    final router = AppRouter();
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routeInformationProvider: _router.router.routeInformationProvider,
-      routeInformationParser: _router.router.routeInformationParser,
-      routerDelegate: _router.router.routerDelegate,
+      routeInformationProvider: router.router.routeInformationProvider,
+      routeInformationParser: router.router.routeInformationParser,
+      routerDelegate: router.router.routerDelegate,
       title: 'Bakery',
     );
   }

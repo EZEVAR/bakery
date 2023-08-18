@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import '../TabBarView/birthday_tab.dart';
+import '../TabBarView/cakepiece_tab.dart';
+import '../TabBarView/cupcake_tab.dart';
+import '../TabBarView/muffin_tab.dart';
+import '../TabBarView/wedding_tab.dart';
+import '../controller.dart/cake_tabs.dart';
 
 class MyProductPage extends StatefulWidget {
   const MyProductPage({super.key});
@@ -10,234 +17,149 @@ class MyProductPage extends StatefulWidget {
 class MyProductPageState extends State<MyProductPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    List<Widget> cakeTabs = [
+      CakeTabs(
+          iconPath: 'assets/icons/birthday-cakeicon.png',
+          colors: Colors.pink.shade50),
+      CakeTabs(
+          iconPath: 'assets/icons/cupcakeicon.png',
+          colors: Colors.teal.shade50),
+      CakeTabs(
+          iconPath: 'assets/icons/piece-of-cakeicon.png',
+          colors: Colors.brown.shade50),
+      CakeTabs(
+          iconPath: 'assets/icons/muffinicon.png',
+          colors: Colors.yellow.shade50),
+      CakeTabs(
+          iconPath: 'assets/icons/weddingcakeicon.png',
+          colors: Colors.red.shade50)
+    ];
+    return DefaultTabController(
+      length: cakeTabs.length,
+      child: Scaffold(
         appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            color: Colors.black,
-            onPressed: () {
-              Navigator.pop(context);
-
-              /// button volver a inicio
-            },
-
-            /// prueba
+          backgroundColor: Colors.purple[50],
+          title: const Text(
+            'Bakery',
+            style: TextStyle(color: Color.fromARGB(255, 44, 1, 51)),
           ),
-          title: const Text('BAKERY', style: TextStyle(color: Colors.black)),
-          centerTitle: true,
-          actions: <Widget>[
+          elevation: 0.0,
+          leading: const Icon(
+            Icons.menu,
+            color: Color.fromARGB(255, 44, 1, 51),
+            size: 30,
+          ),
+          actions: [
             IconButton(
-              icon: const Icon(Icons.search),
+              icon: const Icon(
+                Icons.search,
+                color: Colors.green,
+                size: 30,
+              ),
               onPressed: () {},
-              color: Colors.grey,
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.shopping_cart_outlined,
+                color: Colors.red,
+                size: 30,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.blue,
+                size: 30,
+              ),
+              onPressed: () {},
             ),
           ],
         ),
-        body: ListView(
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  height: 250.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                height: 230.0,
-                                width: MediaQuery.of(context).size.width -
-                                    MediaQuery.of(context).size.width / 3,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5.0),
-                                    image: const DecorationImage(
-                                        image: AssetImage('assets/img4.jpg'),
-                                        fit: BoxFit.cover)),
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                backgroundColor: Colors.transparent,
+                expandedHeight: 180,
+                floating: true,
+                snap: true,
+                flexibleSpace: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: ClipPath(
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          height: 200,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.purple[50],
+                          ),
+                          child: ImageSlideshow(
+                            width: double.infinity,
+                            initialPage: 0,
+                            indicatorColor:
+                                const Color.fromARGB(255, 230, 223, 231),
+                            onPageChanged: (value) {},
+                            autoPlayInterval: 5000,
+                            isLoop: true,
+                            children: [
+                              Image.asset(
+                                'assets/img1.jpg',
                               ),
-                              const Positioned(
-                                left: 15.0,
-                                top: 130.0,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Medialunas',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontFamily: 'Quicksand',
-                                          fontSize: 30.0,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      '\$500',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'Quicksand',
-                                        fontSize: 20.0,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
+                              Image.asset(
+                                'assets/img2.jpg',
+                              ),
+                              Image.asset(
+                                'assets/img3.jpg',
+                              ),
+                              Image.asset(
+                                'assets/img5.jpg',
+                              ),
+                              Image.asset(
+                                'assets/img6.jpg',
+                              ),
                             ],
-                          )
-                        ],
+                          ),
+                        ),
                       ),
-                      SizedBox(width: 5.0),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10.0),
-                Padding(
-                  padding: EdgeInsets.only(left: 17.0),
-                  child: Text(
-                    'Productos',
-                    style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                SizedBox(height: 15.0),
-                GridView.count(
-                  crossAxisCount: 2,
-                  primary: false,
-                  crossAxisSpacing: 10.0,
-                  childAspectRatio: 0.85,
-                  mainAxisSpacing: 10.0,
-                  shrinkWrap: true,
-                  children: <Widget>[
-                    _buildFoodCard(
-                      'chocolat cake',
-                      'Italy',
-                      'assets/img1.jpg',
-                      64,
-                    ),
-                    _buildFoodCard(
-                      'Mousse',
-                      'China',
-                      'assets/img2.jpg',
-                      64,
-                    ),
-                    _buildFoodCard(
-                      'Raspberry',
-                      'Italy',
-                      'assets/img3.jpg',
-                      64,
-                    ),
-                    _buildFoodCard(
-                      'Cupcake',
-                      'Sweden',
-                      'assets/img5.jpg',
-                      64,
-                    ),
-                    _buildFoodCard(
-                      'Cupcake',
-                      'Sweden',
-                      'assets/img6.jpg',
-                      64,
-                    ),
-                    _buildFoodCard(
-                      'Cupcake',
-                      'Sweden',
-                      'assets/img7.jpg',
-                      64,
                     ),
                   ],
                 ),
-                SizedBox(height: 10.0)
-              ],
-            )
-          ],
-        ));
-  }
-
-  Widget _buildFoodCard(
-      String name, String origin, String cardImage, int cardIndex) {
-    return Padding(
-      padding: cardIndex.isEven
-          ? EdgeInsets.only(right: 15.0)
-          : EdgeInsets.only(left: 15.0),
-      child: Container(
-        height: 400.0,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(
-                color: Colors.grey.withOpacity(0.2),
-                style: BorderStyle.solid,
-                width: 1.0)),
-        child: Stack(
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  height: 125.0,
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          topRight: Radius.circular(10.0)),
-                      image: DecorationImage(
-                          image: AssetImage(cardImage), fit: BoxFit.cover)),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5.0, top: 5.0),
-                  child: Text(
-                    name,
-                    style: const TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 15.0,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5.0),
-                  child: Text(
-                    origin,
-                    style: const TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 12.0,
-                        color: Colors.grey),
-                  ),
-                ),
-                SizedBox(height: 3.0),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5.0, top: 10.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.attach_money,
-                        color: Colors.grey.withOpacity(0.4),
-                      ),
-                      SizedBox(width: 2.0),
-                      Text('${200}')
-                    ],
-                  ),
-                )
-              ],
-            ),
-            Positioned(
-              left: 110.0,
-              top: 102.0,
-              child: Container(
-                height: 40.0,
-                width: 40.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.amber),
-                child: const Center(
-                  child: Icon(Icons.shopping_cart, color: Colors.white),
+              ),
+            ];
+          },
+          body: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 15.0, bottom: 10),
+                child: Text(
+                  'Elije nuestros productos',
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 56, 2, 64),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25),
                 ),
               ),
-            )
-          ],
+              TabBar(tabs: cakeTabs),
+              const Expanded(
+                child: TabBarView(
+                  children: [
+                    // Birthday cakes
+                    BirthdaysTab(),
+                    // Cupcakes
+                    CupCakesTab(),
+                    // cake pieces
+                    CakePiecesTab(),
+                    // muffins
+                    MuffinsTab(),
+                    // Wedding cake
+                    WeddingCakeTab()
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
