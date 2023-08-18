@@ -9,16 +9,11 @@ class CakePiecesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     List cakePieces = [
       // flavor, price, color, image
-      ['Strawberry', '\$10', Colors.red, 'assets/cakepieces/cake-piece1.png'],
-      ['Plain cake', '\$6', Colors.purple, 'assets/cakepieces/cake-piece2.png'],
-      ['Chcolate', '\$18', Colors.brown, 'assets/cakepieces/cake-piece3.png'],
-      [
-        'Black Forest',
-        '\$20',
-        Colors.green,
-        'assets/cakepieces/cake-piece4.png'
-      ],
-      ['Raspberry', '\$15', Colors.orange, 'assets/cakepieces/cake-piece5.png']
+      ['Strawberry', '\$300', Colors.red, 'assets/cakepieces/'],
+      ['Plain cake', '\$300', Colors.purple, 'assets/cakepieces/'],
+      ['Chcolate', '\$300', Colors.brown, 'assets/cakepieces/'],
+      ['Black Forest', '\$500', Colors.green, 'assets/cakepieces/'],
+      ['Raspberry', '\$150', Colors.orange, 'assets/cakepieces/']
     ];
     return GridView.builder(
         itemCount: cakePieces.length,

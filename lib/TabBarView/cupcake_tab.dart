@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../Utilities/Tiles/cupcake_tile.dart';
 
 class CupCakesTab extends StatelessWidget {
@@ -9,11 +8,11 @@ class CupCakesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     List cupCakes = [
       // flavor, price, color, image
-      ['Strawberry', '\$23', Colors.red, 'assets/cupcakes/cupcake1.png'],
-      ['Vanila', '\$18', Colors.orange, 'assets/cupcakes/cupcake2.png'],
-      ['Chocolate', '\$45', Colors.brown, 'assets/cupcakes/cupcake3.png'],
-      ['Rose', '\$30', Colors.green, 'assets/cupcakes/cupcake4.png'],
-      ['Caramel', '\$35', Colors.purple, 'assets/cupcakes/cupcake5.png']
+      ['Strawberry', '\$350', Colors.red, 'assets/cupcakes/c1.jpeg'],
+      ['Vanila', '\$350', Colors.orange, 'assets/cupcakes/c3.jpeg'],
+      ['Chocolate', '\$450', Colors.brown, 'assets/cupcakes/c5.jpeg'],
+      ['Rose', '\$450', Colors.green, 'assets/cupcakes/c2.jpeg'],
+      ['Caramel', '\$350', Colors.purple, 'assets/cupcakes/c4.jpeg']
     ];
     return GridView.builder(
         itemCount: cupCakes.length,

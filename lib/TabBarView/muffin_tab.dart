@@ -8,11 +8,11 @@ class MuffinsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     List muffins = [
       // flavor, price, color, image
-      ['Strawbeer', '\$90', Colors.red, 'assets/muffins/muffin1.png'],
-      ['Vanila', '\$80', Colors.green, 'assets/muffins/muffin2.png'],
-      ['Caramel', '\$45', Colors.brown, 'assets/muffins/muffin3.png'],
-      ['Mango', '\$78', Colors.purple, 'assets/muffins/muffin4.png'],
-      ['Chocolate', '\$65', Colors.orange, 'assets/muffins/muffin5.png']
+      ['Strawbeer', '\$90', Colors.red, 'assets/muffins/'],
+      ['Vanila', '\$80', Colors.green, 'assets/muffins/'],
+      ['Caramel', '\$45', Colors.brown, 'assets/muffins/'],
+      ['Mango', '\$78', Colors.purple, 'assets/muffins/'],
+      ['Chocolate', '\$65', Colors.orange, 'assets/muffins/']
     ];
     return GridView.builder(
         itemCount: muffins.length,
