@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../Models/cakepiece_model.dart';
+import '../Models/cupcake_model.dart';
 
-class CakepieceCakePage extends StatelessWidget {
-  const CakepieceCakePage({super.key, required this.cakepiece});
-  final CakepieceModel cakepiece;
+class CupCakePage extends StatelessWidget {
+  const CupCakePage({super.key, required this.cupcake});
+  final CupCakeModel cupcake;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +33,9 @@ class CakepieceCakePage extends StatelessWidget {
                           height: 200,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: cakepiece.color[50],
+                            color: cupcake.color[50],
                           ),
-                          child: Image.asset(cakepiece.imagePath)),
+                          child: Image.asset(cupcake.imagePath)),
                     ),
                   ),
                 ],
@@ -49,7 +49,7 @@ class CakepieceCakePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0, bottom: 10),
                 child: Text(
-                  "${cakepiece.flavor} Cake 🎂",
+                  "${cupcake.flavor} 🥞",
                   style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class CakepieceCakePage extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(20),
                 child: Text(
-                  "Piezas o Porciones.",
+                  "Ricos y esponjosos",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.black87, fontSize: 17, wordSpacing: 1),
@@ -121,7 +121,7 @@ class CakepieceCakePage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              cakepiece.price,
+                              cupcake.price,
                               style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -132,7 +132,7 @@ class CakepieceCakePage extends StatelessWidget {
                               height: 10,
                             ),
                             const Text(
-                              "Delivery Free 5 km",
+                              "Delivery Free",
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 15,
