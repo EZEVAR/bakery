@@ -18,7 +18,7 @@ class CakePieceTile extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Container(
         decoration: BoxDecoration(
-          color: colors[50],
+          color: colors[50], /// ver esto
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(

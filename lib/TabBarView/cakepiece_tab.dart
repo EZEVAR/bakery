@@ -1,36 +1,51 @@
-import 'package:flutter/material.dart';
-
 import '../Utilities/Tiles/cakepiece_tile.dart';
 
+import 'package:flutter/material.dart';
+import '../Models/cakepiece_model.dart';
+import '../pages/cakepiece.dart';
+
 class CakePiecesTab extends StatelessWidget {
-  const CakePiecesTab({super.key});
+  const CakePiecesTab({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    List cakePieces = [
-      // flavor, price, color, image
-      ['Strawberry', '\$10', Colors.red, 'assets/cakepieces/cake-piece1.png'],
-      ['Plain cake', '\$6', Colors.purple, 'assets/cakepieces/cake-piece2.png'],
-      ['Chcolate', '\$18', Colors.brown, 'assets/cakepieces/cake-piece3.png'],
-      [
-        'Black Forest',
-        '\$20',
-        Colors.green,
-        'assets/cakepieces/cake-piece4.png'
-      ],
-      ['Raspberry', '\$15', Colors.orange, 'assets/cakepieces/cake-piece5.png']
-    ];
+    List<CakepieceModel> cakepieces = CakepieceModel.cakepiece;
+    return CakepieceGrid(cakepieces: cakepieces);
+  }
+}
+
+class CakepieceGrid extends StatelessWidget {
+  const CakepieceGrid({
+    Key? key,
+    required this.cakepieces,
+  }) : super(key: key);
+
+  final List<CakepieceModel> cakepieces;
+
+  @override
+  Widget build(BuildContext context) {
     return GridView.builder(
-        itemCount: cakePieces.length,
+        itemCount: cakepieces.length,
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1 / 1.5),
         itemBuilder: (context, index) {
-          return CakePieceTile(
-            flavor: cakePieces[index][0],
-            price: cakePieces[index][1],
-            colors: cakePieces[index][2],
-            imagePath: cakePieces[index][3],
+          CakepieceModel cakepieceModel = cakepieces[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          CakepieceCakePage(cakepiece: cakepieceModel)));
+            },
+            child: CakePieceTile(
+                flavor: cakepieceModel.flavor,
+                imagePath: cakepieceModel.imagePath,
+                price: cakepieceModel.price,
+                colors: cakepieceModel.color),
           );
         });
   }

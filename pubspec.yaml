@@ -24,4 +24,7 @@ flutter:
   assets:
    - assets/
    - assets/icons/
+   - assets/cakepieces/
    - assets/birthdaycake/
+   
+   
