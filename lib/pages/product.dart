@@ -3,7 +3,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import '../TabBarView/birthday_tab.dart';
 import '../TabBarView/cakepiece_tab.dart';
 import '../TabBarView/cupcake_tab.dart';
-import '../TabBarView/muffin_tab.dart';
+import '../TabBarView/muffins_tab.dart';
 import '../TabBarView/wedding_tab.dart';
 import '../controller.dart/cake_tabs.dart';
 

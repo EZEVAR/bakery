@@ -77,7 +77,7 @@ class MuffinTiles extends StatelessWidget {
             height: 4,
           ),
           Text(
-            'Ganache',
+            'Variedades',
             style: TextStyle(color: Colors.grey[600], fontSize: 16),
           ),
 
