@@ -27,9 +27,10 @@ class _LoginState extends State<LoginPage> {
     Widget _buildEmailField() {
       return TextFormField(
         validator: (value) {
-          if (!isEmail(value!) || value!.trim().isEmpty) {
+          if (!isEmail(value!) || value.trim().isEmpty) {
             return 'Please enter a valid email.';
           }
+          return null;
         },
         style: const TextStyle(color: Colors.white),
         textInputAction: TextInputAction.done,
@@ -46,6 +47,7 @@ class _LoginState extends State<LoginPage> {
         initialValue: '',
         validator: (value) {
           if (value!.trim().isEmpty) return 'Please enter your password.';
+          return null;
         },
         style: const TextStyle(color: Colors.white),
         keyboardType: TextInputType.emailAddress,
