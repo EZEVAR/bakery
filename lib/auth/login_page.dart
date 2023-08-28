@@ -26,34 +26,33 @@ class _LoginState extends State<LoginPage> {
   Form _buildLoginWidget(GlobalKey formkey, {context = BuildContext}) {
     Widget _buildEmailField() {
       return TextFormField(
-        // autovalidate: true,
-        // validator: (String value) {
-        //   if (!isEmail(value) || value.trim().isEmpty)
-        //     return 'Please enter a valid email.';
-        // },
-
+        validator: (value) {
+          if (!isEmail(value!) || value!.trim().isEmpty) {
+            return 'Please enter a valid email.';
+          }
+        },
         style: const TextStyle(color: Colors.white),
         textInputAction: TextInputAction.done,
         keyboardType: TextInputType.emailAddress,
         decoration: textDecoration('Email Address'),
-        // onSaved: (String value) {
-        //   _loginData['email'] = value;
-        // },
+        onSaved: (value) {
+          _loginData['email'] = value;
+        },
       );
     }
 
     Widget _buildPasswordField() {
       return TextFormField(
-        initialValue: '', // used to set the initial value
-        // validator: (String value) {
-        //   if (value.trim().isEmpty) return 'Please enter your password.';
-        // },
+        initialValue: '',
+        validator: (value) {
+          if (value!.trim().isEmpty) return 'Please enter your password.';
+        },
         style: const TextStyle(color: Colors.white),
         keyboardType: TextInputType.emailAddress,
         decoration: textDecoration('Password'),
-        // onSaved: (String value) {
-        //   _loginData['password'] = value;
-        // },
+        onSaved: (value) {
+          _loginData['password'] = value;
+        },
       );
     }
 

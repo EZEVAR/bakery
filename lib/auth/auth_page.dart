@@ -3,8 +3,6 @@ import 'login_page.dart';
 import 'signup_page.dart';
 
 class AuthPage extends StatefulWidget {
-  //
-  //
   static var name;
 
   const AuthPage({super.key});
@@ -35,10 +33,7 @@ class _AuthpageState extends State<AuthPage> {
               image: const AssetImage('assets/fondo.jpg'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.5), BlendMode.dstATop)
-              // colorFilter: ColorFilter.mode(
-              // Colors.black.withOpacity(0.5),
-              ),
+                  Colors.black.withOpacity(0.5), BlendMode.dstATop)),
         ),
         padding: const EdgeInsets.all(25),
         child: Center(
