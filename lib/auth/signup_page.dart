@@ -66,7 +66,7 @@ class SignUpPage extends StatelessWidget {
           // color: Theme.of(context).buttonColor,
           textColor: Colors.white,
           child: const Text('Sign Up'),
-          onPressed: () => context.pushNamed(Home.name),
+          onPressed: () => context.pushNamed(Home),
         ),
         Container(
           margin: const EdgeInsets.only(
