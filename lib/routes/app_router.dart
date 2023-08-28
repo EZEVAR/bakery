@@ -1,3 +1,4 @@
+import 'package:bakery/auth/auth_page.dart';
 import 'package:bakery/pages/product.dart';
 import 'package:bakery/pages/home.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,11 @@ class AppRouter {
               name: MyProductPage.name,
               path: '/product',
               builder: (context, state) => const MyProductPage(),
+            ),
+            GoRoute(
+              name: AuthPage.name,
+              path: '/auth',
+              builder: (context, state) => const AuthPage(),
             ),
           ],
         );
