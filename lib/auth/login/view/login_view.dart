@@ -33,6 +33,11 @@ class LoginView extends StatelessWidget {
                     style: TextStyle(fontSize: 35, color: Colors.white),
                   ),
                 ),
+                // TODO Add Email InputField
+                // TODO Add Password InputField
+                // TODO Add Summit Button
+                // TODO Add Navigation to Signup Page
+                // TODO Add Navigation to ForgotPassword
               ],
             ),
           ),
