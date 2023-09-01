@@ -1,5 +1,6 @@
+import 'package:bakery/birthday_details/view/widgets/image_bday_details.dart';
 import 'package:flutter/material.dart';
-import '../Models/birdthday_model.dart';
+import '../models/birdthday_model.dart';
 
 class BirthdayCakePage extends StatelessWidget {
   const BirthdayCakePage({super.key, required this.birthday});
@@ -11,6 +12,7 @@ class BirthdayCakePage extends StatelessWidget {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
+              title: Text('Holaaa'),
               leading: IconButton(
                 icon: const Icon(
                   Icons.arrow_back,
@@ -20,6 +22,7 @@ class BirthdayCakePage extends StatelessWidget {
                   Navigator.of(context).pop();
                 },
               ),
+              actions: [IconButton(onPressed: () {}, icon: Icon(Icons.share))],
               backgroundColor: Colors.transparent,
               expandedHeight: 180,
               floating: true,
@@ -35,7 +38,7 @@ class BirthdayCakePage extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: birthday.color[50],
                           ),
-                          child: Image.asset(birthday.imagePath)),
+                          child: ImageBDayDetails(birthday: birthday)),
                     ),
                   ),
                 ],
