@@ -1,4 +1,5 @@
 import 'package:bakery/auth/auth_page.dart';
+import 'package:bakery/auth/login/view/login_page.dart';
 import 'package:bakery/pages/product.dart';
 import 'package:bakery/pages/home.dart';
 import 'package:flutter/material.dart';
@@ -10,22 +11,22 @@ class AppRouter {
   AppRouter()
       : _router = GoRouter(
           navigatorKey: GlobalKey<NavigatorState>(),
-          initialLocation: '/inicio',
+          initialLocation: '/login',
           routes: [
-            GoRoute(
-              name: Home.name,
-              path: '/inicio',
-              builder: (context, state) => const Home(),
-            ),
+            // GoRoute(
+            //   name: Home.name,
+            //   path: '/inicio',
+            //   builder: (context, state) => const Home(),
+            // ),
             GoRoute(
               name: MyProductPage.name,
               path: '/product',
               builder: (context, state) => const MyProductPage(),
             ),
             GoRoute(
-              name: AuthPage.name,
-              path: '/auth',
-              builder: (context, state) => const AuthPage(),
+              name: LoginPage.name,
+              path: '/login',
+              builder: (context, state) => const LoginPage(),
             ),
           ],
         );
