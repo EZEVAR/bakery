@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import '../TabBarView/birthday_tab.dart';
-import '../TabBarView/cakepiece_tab.dart';
-import '../TabBarView/cupcake_tab.dart';
-import '../TabBarView/muffins_tab.dart';
-import '../TabBarView/wedding_tab.dart';
+import '../tab_bar_view/birthday_tab.dart';
+import '../tab_bar_view/cakepiece_tab.dart';
+import '../tab_bar_view/cupcake_tab.dart';
+import '../tab_bar_view/muffins_tab.dart';
+import '../tab_bar_view/wedding_tab.dart';
 import '../controller.dart/cake_tabs.dart';
 
 class MyProductPage extends StatefulWidget {

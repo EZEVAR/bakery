@@ -1,19 +1,19 @@
-
-
+import 'package:bakery/auth/login/cubit/login_cubit.dart';
 import 'package:bakery/auth/login/view/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatelessWidget {
-
   static const name = 'login';
 
   const LoginPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    /// TODO Add Login Cubit
-    return LoginView();
+    return BlocProvider(
+      create: (context) => LoginCubit(),
+      child: LoginView(),
+    );
   }
 }
 

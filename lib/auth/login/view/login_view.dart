@@ -1,3 +1,4 @@
+import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -37,6 +38,7 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 // TODO Add Email InputField
+                EmailField(),
                 // TODO Add Password InputField
                 // TODO Add Summit Button
                 // TODO Add Navigation to Signup Page
