@@ -1,7 +1,7 @@
-import '../Utilities/Tiles/cakepiece_tile.dart';
+import '../utilities/Tiles/cakepiece_tile.dart';
 
 import 'package:flutter/material.dart';
-import '../Models/cakepiece_model.dart';
+import '../models/cakepiece_model.dart';
 import '../pages/cakepiece.dart';
 
 class CakePiecesTab extends StatelessWidget {

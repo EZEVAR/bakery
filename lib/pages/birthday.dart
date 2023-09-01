@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Models/birdthday_model.dart';
+import '../models/birdthday_model.dart';
 
 class BirthdayCakePage extends StatelessWidget {
   const BirthdayCakePage({super.key, required this.birthday});

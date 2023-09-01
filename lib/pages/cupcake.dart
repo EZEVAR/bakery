@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Models/cupcake_model.dart';
+import '../models/cupcake_model.dart';
 
 class CupCakePage extends StatelessWidget {
   const CupCakePage({super.key, required this.cupcake});

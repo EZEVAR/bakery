@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Models/weddingcake_model.dart';
-import '../Utilities/Tiles/weddingcake_tile.dart';
+import '../models/weddingcake_model.dart';
+import '../utilities/Tiles/weddingcake_tile.dart';
 import '../pages/weddingcake.dart';
 
 class WeddingCakeTab extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Models/weddingcake_model.dart';
+import '../models/weddingcake_model.dart';
 
 class WeddingCakePage extends StatelessWidget {
   const WeddingCakePage({super.key, required this.wedding});

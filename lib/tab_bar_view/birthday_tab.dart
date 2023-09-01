@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Models/birdthday_model.dart';
-import '../Utilities/Tiles/birthday_tile.dart';
+import '../models/birdthday_model.dart';
+import '../utilities/Tiles/birthday_tile.dart';
 import '../pages/birthday.dart';
 
 class BirthdaysTab extends StatelessWidget {

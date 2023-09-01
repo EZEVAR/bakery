@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Models/muffins_model.dart';
-import '../Utilities/Tiles/muffins_tile.dart';
+import '../models/muffins_model.dart';
+import '../utilities/Tiles/muffins_tile.dart';
 import '../pages/muffins.dart';
 
 class MuffinsTab extends StatelessWidget {

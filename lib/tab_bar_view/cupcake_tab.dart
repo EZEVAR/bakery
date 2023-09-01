@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Models/cupcake_model.dart';
-import '../Utilities/Tiles/cupcake_tile.dart';
+import '../models/cupcake_model.dart';
+import '../utilities/Tiles/cupcake_tile.dart';
 import '../pages/cupcake.dart';
 
 class CupCakesTab extends StatelessWidget {

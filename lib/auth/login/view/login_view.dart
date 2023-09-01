@@ -10,10 +10,13 @@ class LoginView extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.black,
           image: DecorationImage(
-              image: const AssetImage('assets/fondo.jpg'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.5), BlendMode.dstATop)),
+            image: const AssetImage('assets/fondo.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.5),
+              BlendMode.dstATop,
+            ),
+          ),
         ),
         padding: const EdgeInsets.all(25),
         child: Center(
