@@ -1,4 +1,5 @@
 import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
+import 'package:bakery/auth/login/view/widgets/custom_password_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -39,6 +40,8 @@ class LoginView extends StatelessWidget {
                 ),
                 // TODO Add Email InputField
                 EmailField(),
+                _space(),
+                PasswordField(),
                 // TODO Add Password InputField
                 // TODO Add Summit Button
                 // TODO Add Navigation to Signup Page
@@ -64,6 +67,11 @@ class LoginView extends StatelessWidget {
         //   ),
         // ),
       ),
+    );
+  }
+  Widget _space() {
+    return const SizedBox(
+      height: 10,
     );
   }
 }

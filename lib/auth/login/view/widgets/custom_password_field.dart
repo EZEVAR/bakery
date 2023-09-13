@@ -2,8 +2,8 @@ import 'package:bakery/auth/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+class PasswordField extends StatelessWidget {
+  const PasswordField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,23 @@ class EmailField extends StatelessWidget {
           ),
           child: TextFormField(
             onChanged: (value) {
-              print('Valor recibido en email field ${value}');
-              context.read<LoginCubit>().emailChanged(value);
+              print('Valor recibido en password field ${value}');
+              context.read<LoginCubit>().passwordChanged(value);
             },
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.white,
+                  color: const Color.fromRGBO(255, 255, 255, 1),
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
-              labelText: 'Email Address',
+              labelText: 'Password',
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
               errorText:
-                  state.emailInput.invalid ? 'No puede estar vacio' : null,
+                  state.passwordInput.invalid ? 'Minimo 8 caracteres, debe contener al menos 1 numero' : null,
             ),
           ),
           
