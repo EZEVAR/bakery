@@ -37,6 +37,7 @@ class EmailField extends StatelessWidget {
                   state.emailInput.invalid ? 'complete correct email' : null,
             ),
           ),
+          
         );
       },
     );

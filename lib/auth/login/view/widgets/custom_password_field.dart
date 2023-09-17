@@ -33,8 +33,9 @@ class PasswordField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText:
-              state.passwordInput.invalid ? 'invalid password' : null,
+              errorText: state.passwordInput.invalid
+                  ? 'Minimo 8 caracteres, debe contener al menos 1 numero'
+                  : null,
             ),
           ),
         );
