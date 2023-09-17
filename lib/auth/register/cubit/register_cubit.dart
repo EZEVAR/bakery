@@ -4,10 +4,10 @@ import 'package:formz/formz.dart';
 
 import '../../../shared/forms_input/forms_input.dart';
 
-part 'login_state.dart';
+part 'register_state.dart';
 
-class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(const LoginState());
+class RegisterCubit extends Cubit<RegisterState> {
+  RegisterCubit() : super(const RegisterState());
 
   void emailChanged(String value) {
     final email = EmailInput.dirty(value);
@@ -25,11 +25,30 @@ class LoginCubit extends Cubit<LoginState> {
     final password = PasswordInput.dirty(value);
     emit(state.copyWith(
       passwordInput: password,
-      status: Formz.validate([state.emailInput, password]),
+      status: Formz.validate(
+          [state.emailInput, state.nameInput, state.lastnameInput, password]),
     ));
   }
 
-  Future<void> logInWithSomething() async {
+  void nameChanged(String value) {
+    final name = NameInput.dirty(value);
+    emit(state.copyWith(
+      nameInput: name,
+      status: Formz.validate(
+          [state.emailInput, state.passwordInput, state.lastnameInput, name]),
+    ));
+  }
+
+  void lastnameChanged(String value) {
+    final lastname = LastnameInput.dirty(value);
+    emit(state.copyWith(
+      lastnameInput: lastname,
+      status: Formz.validate(
+          [state.emailInput, state.passwordInput, state.nameInput, lastname]),
+    ));
+  }
+
+  Future<void> registerWithSomething() async {
     emit(state.copyWith(status: FormzStatus.submissionInProgress));
 
     print(

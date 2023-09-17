@@ -103,18 +103,7 @@ class LoginPage extends StatelessWidget {
 //             ),
 //           ),
 
-//           // SwitchListTile(
-//           //   title: Text('I accept the Terms & Conditions'),
-//           //   value: _acceptTerms,
-//           //   onChanged: (bool value) {
-//           //     setState(() {
-//           //       _acceptTerms = value;
-//           //     });
-//           //   },
-//           // ),
-//           const SizedBox(
-//             height: 25,
-//           ),
+//           //
 //           MaterialButton(
 //             shape: const RoundedRectangleBorder(
 //                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -153,7 +142,7 @@ class LoginPage extends StatelessWidget {
 //             child: const Text(
 //               'Create an account, Sign Up',
 //               style: TextStyle(
-//                 color: Colors.white,
+//                 color: Colors.red,
 //                 fontSize: 16,
 //               ),
 //             ),

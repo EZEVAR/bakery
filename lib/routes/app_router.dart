@@ -1,7 +1,6 @@
-import 'package:bakery/auth/auth_page.dart';
+
 import 'package:bakery/auth/login/view/login_page.dart';
 import 'package:bakery/pages/product.dart';
-import 'package:bakery/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
