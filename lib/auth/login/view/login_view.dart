@@ -93,10 +93,4 @@ class LoginView extends StatelessWidget {
       ),
     );
   }
-
-  Widget _space() {
-    return const SizedBox(
-      height: 10,
-    );
-  }
 }
