@@ -2,6 +2,7 @@ import 'package:bakery/auth/register/view/widgets/reg_email_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_lastname_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_name_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_password_field.dart';
+import 'package:bakery/auth/register/view/widgets/signupbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -41,7 +42,6 @@ class RegisterView extends StatelessWidget {
                     style: TextStyle(fontSize: 35, color: Colors.white),
                   ),
                 ),
-
                 const RegisternameField(),
                 const SizedBox(
                   height: 25,
@@ -58,21 +58,7 @@ class RegisterView extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-
-                // TODO Add Navigation to Signup Page
-                MaterialButton(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide(color: Color.fromARGB(255, 225, 8, 8))),
-                  padding: const EdgeInsets.only(
-                    left: 50,
-                    right: 50,
-                  ),
-                  // color: Theme.of(context).buttonColor,
-                  textColor: Colors.white,
-                  child: const Text('Sign Up'),
-                  onPressed: () => context.go('/login'),
-                ),
+                const SignupField(),
                 Container(
                   margin: const EdgeInsets.only(
                     top: 10,
