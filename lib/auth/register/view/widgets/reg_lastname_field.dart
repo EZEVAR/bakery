@@ -33,7 +33,7 @@ class RegisterlastnameField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText: state.emailInput.invalid
+              errorText: state.lastnameInput.invalid
                   ? 'complete correctamente el Apellido'
                   : null,
             ),
