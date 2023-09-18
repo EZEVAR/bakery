@@ -35,7 +35,7 @@ class PasswordField extends StatelessWidget {
                 color: Colors.white,
               ),
               errorText: state.passwordInput.invalid
-                  ? 'Minimo 6 caracteres, debe contener al menos 1 numero'
+                  ? 'Min 6 caracteres y 1 numero'
                   : null,
             ),
           ),
