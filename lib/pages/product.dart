@@ -42,7 +42,7 @@ class MyProductPageState extends State<MyProductPage> {
           backgroundColor: Colors.purple[50],
           title: const Text(
             'Bakery',
-            style: TextStyle(color: Color.fromARGB(255, 44, 1, 51)),
+            style: TextStyle(color: Color.fromARGB(255, 197, 4, 226)),
           ),
           elevation: 0.0,
           leading: const Icon(

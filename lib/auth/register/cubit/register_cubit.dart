@@ -11,7 +11,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void emailChanged(String value) {
     final email = EmailInput.dirty(value);
-    print('Email Recibido $email');
+
     emit(state.copyWith(
       emailInput: email,
       status: Formz.validate([

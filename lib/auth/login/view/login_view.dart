@@ -1,7 +1,7 @@
 import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
 import 'package:bakery/auth/login/view/widgets/custom_password_field.dart';
+import 'package:bakery/auth/login/view/widgets/custom_submitbutton.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -41,32 +41,14 @@ class LoginView extends StatelessWidget {
                 ),
 
                 EmailField(),
-
                 SizedBox(
                   height: 25,
                 ),
-
                 PasswordField(),
-
                 SizedBox(
                   height: 25,
                 ),
-
-                // TODO Add Summit Button
-                MaterialButton(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide(color: Colors.white)),
-                  padding: const EdgeInsets.only(
-                    left: 50,
-                    right: 50,
-                  ),
-                  color: Colors.white,
-                  child: const Text('Login'),
-                  onPressed: () => context.go('/product'),
-                ),
-                SizedBox(height: 25),
-
+                SubmitField(),
                 // TODO Add Navigation to Signup Page
                 // TODO Add Navigation to ForgotPassword
               ],

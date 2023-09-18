@@ -17,6 +17,7 @@ class PasswordField extends StatelessWidget {
             horizontal: 20,
           ),
           child: TextFormField(
+            obscureText: true,
             onChanged: (value) {
               print('Valor recibido en password field ${value}');
               context.read<LoginCubit>().passwordChanged(value);
@@ -34,7 +35,7 @@ class PasswordField extends StatelessWidget {
                 color: Colors.white,
               ),
               errorText: state.passwordInput.invalid
-                  ? 'Minimo 8 caracteres, debe contener al menos 1 numero'
+                  ? 'Minimo 6 caracteres, debe contener al menos 1 numero'
                   : null,
             ),
           ),
