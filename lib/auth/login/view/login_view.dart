@@ -2,6 +2,7 @@ import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
 import 'package:bakery/auth/login/view/widgets/custom_password_field.dart';
 import 'package:bakery/auth/login/view/widgets/custom_submitbutton.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -40,38 +41,43 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
 
-                EmailField(),
-                SizedBox(
+                const EmailField(),
+                const SizedBox(
                   height: 25,
                 ),
-                PasswordField(),
-                SizedBox(
+                const PasswordField(),
+                const SizedBox(
                   height: 25,
                 ),
-                SubmitField(),
+                const SubmitField(),
                 // TODO Add Navigation to Signup Page
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 10,
+                    bottom: 10,
+                  ),
+                  child: const Text(
+                    'Or',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  child: const Text(
+                    'Create an account, Register',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 250, 249, 249),
+                      fontSize: 18,
+                    ),
+                  ),
+                  onPressed: () => context.go('/register'),
+                ),
                 // TODO Add Navigation to ForgotPassword
               ],
             ),
           ),
         ),
-
-        // child: Center(
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(16.0),
-        //     child: Column(
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       children: [
-        //         Text('Completar con Widgets del formulario'),
-        //         // EmailField(),
-        //         // SizedBox(height: 16),
-        //         // PasswordField(),
-        //         // SizedBox(height: 24),
-        //         // SubmitButton(),
-        //       ],
-        //     ),
-        //   ),
-        // ),``
       ),
     );
   }

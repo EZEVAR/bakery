@@ -7,7 +7,7 @@ class SubmitField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.centerRight,
+      alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
       child: MaterialButton(
         onPressed: () => context.go('/product'),
@@ -17,10 +17,10 @@ class SubmitField extends StatelessWidget {
         padding: const EdgeInsets.all(0),
         child: Container(
           alignment: Alignment.center,
-          height: 50.0,
+          height: 60.0,
           width: 175.0,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
+              borderRadius: BorderRadius.circular(25.0),
               gradient: const LinearGradient(colors: [
                 Color.fromARGB(255, 247, 11, 164),
                 Color.fromARGB(255, 248, 96, 197)
@@ -30,6 +30,7 @@ class SubmitField extends StatelessWidget {
             "LOGIN",
             textAlign: TextAlign.center,
             style: TextStyle(
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
