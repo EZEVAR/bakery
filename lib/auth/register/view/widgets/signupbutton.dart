@@ -1,4 +1,6 @@
+import 'package:bakery/auth/register/cubit/register_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class SignupField extends StatelessWidget {
@@ -6,11 +8,21 @@ class SignupField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String name = "";
+    String lastname = '';
+    String email = '';
+    String password = '';
+    String phone = '';
+
     return Container(
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
       child: MaterialButton(
-        onPressed: () => context.go('/login'),
+        onPressed: () {
+          context
+              .read<RegisterCubit>()
+              .addUsuario(name, lastname, email, password, phone);
+        },
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
         textColor: Colors.white,

@@ -2,6 +2,7 @@ import 'package:bakery/auth/register/view/widgets/reg_email_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_lastname_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_name_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_password_field.dart';
+import 'package:bakery/auth/register/view/widgets/reg_phone_field.dart';
 import 'package:bakery/auth/register/view/widgets/signupbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -51,6 +52,10 @@ class RegisterView extends StatelessWidget {
                   height: 25,
                 ),
                 const RegisteremailField(),
+                const SizedBox(
+                  height: 25,
+                ),
+                const RegisterphoneField(),
                 const SizedBox(
                   height: 25,
                 ),

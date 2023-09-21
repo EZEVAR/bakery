@@ -6,6 +6,8 @@ class RegisterState extends Equatable {
   final PasswordInput passwordInput;
   final NameInput nameInput;
   final LastnameInput lastnameInput;
+  final PhoneInput phoneInput;
+  final bool loading;
 
   const RegisterState({
     this.status = FormzStatus.pure,
@@ -13,11 +15,20 @@ class RegisterState extends Equatable {
     this.passwordInput = const PasswordInput.pure(),
     this.nameInput = const NameInput.pure(),
     this.lastnameInput = const LastnameInput.pure(),
+    this.phoneInput = const PhoneInput.pure(),
+    this.loading = false,
   });
 
   @override
-  List<Object> get props =>
-      [status, emailInput, passwordInput, nameInput, lastnameInput];
+  List<Object> get props => [
+        status,
+        emailInput,
+        passwordInput,
+        nameInput,
+        lastnameInput,
+        phoneInput,
+        loading,
+      ];
 
   RegisterState copyWith({
     FormzStatus? status,
@@ -25,6 +36,8 @@ class RegisterState extends Equatable {
     PasswordInput? passwordInput,
     NameInput? nameInput,
     LastnameInput? lastnameInput,
+    PhoneInput? phoneInput,
+    bool? loading,
   }) {
     return RegisterState(
       status: status ?? this.status,
@@ -32,6 +45,8 @@ class RegisterState extends Equatable {
       passwordInput: passwordInput ?? this.passwordInput,
       lastnameInput: lastnameInput ?? this.lastnameInput,
       nameInput: nameInput ?? this.nameInput,
+      phoneInput: phoneInput ?? this.phoneInput,
+      loading: loading ?? this.loading,
     );
   }
 }

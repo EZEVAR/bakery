@@ -1,17 +1,28 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-
+import '../../../services/database/database_repository_impl.dart';
 import '../../../shared/forms_input/forms_input.dart';
 
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(const RegisterState());
+  RegisterCubit(this._databaseRepository) : super(const RegisterState());
+
+  final DatabaseRepository _databaseRepository;
+
+  Future<void> addUsuario(String name, String lastname, String email,
+      String password, String phone) async {
+    emit(state.copyWith(loading: true));
+
+    await _databaseRepository.addUsuario(
+        name, lastname, email, password, phone);
+
+    emit(state.copyWith(loading: false));
+  }
 
   void emailChanged(String value) {
     final email = EmailInput.dirty(value);
-
     emit(state.copyWith(
       emailInput: email,
       status: Formz.validate([
@@ -45,6 +56,20 @@ class RegisterCubit extends Cubit<RegisterState> {
       lastnameInput: lastname,
       status: Formz.validate(
           [state.emailInput, state.passwordInput, state.nameInput, lastname]),
+    ));
+  }
+
+  void phoneChanged(String value) {
+    final phone = PhoneInput.dirty(value);
+    emit(state.copyWith(
+      phoneInput: phone,
+      status: Formz.validate([
+        state.emailInput,
+        state.passwordInput,
+        state.lastnameInput,
+        state.nameInput,
+        phone
+      ]),
     ));
   }
 

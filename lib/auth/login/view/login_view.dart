@@ -50,7 +50,7 @@ class LoginView extends StatelessWidget {
                   height: 25,
                 ),
                 const SubmitField(),
-                // TODO Add Navigation to Signup Page
+
                 Container(
                   margin: const EdgeInsets.only(
                     top: 10,
