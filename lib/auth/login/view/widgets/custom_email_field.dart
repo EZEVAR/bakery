@@ -1,6 +1,7 @@
-import 'package:bakery/auth/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../autho/login/cubit/login_cubit.dart';
 
 class EmailField extends StatelessWidget {
   const EmailField({super.key});
@@ -33,11 +34,8 @@ class EmailField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText:
-                  state.emailInput.invalid ? 'complete correct email' : null,
             ),
           ),
-          
         );
       },
     );

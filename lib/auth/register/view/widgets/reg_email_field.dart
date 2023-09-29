@@ -33,8 +33,6 @@ class RegisteremailField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText:
-                  state.emailInput.invalid ? 'complete correct email' : null,
             ),
           ),
         );

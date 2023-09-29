@@ -1,5 +1,6 @@
-import 'package:bakery/auth/login/view/login_page.dart';
+import 'package:bakery/autho/login/view/login_page.dart';
 import 'package:bakery/auth/register/view/register_page.dart';
+import 'package:bakery/autho/sign_up/sign_up.dart';
 import 'package:bakery/pages/product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,11 @@ class AppRouter {
               name: LoginPage.name,
               path: '/login',
               builder: (context, state) => const LoginPage(),
+            ),
+            GoRoute(
+              name: SignUpPage.name,
+              path: '/signup',
+              builder: (context, state) => const SignUpPage(),
             ),
             GoRoute(
               name: RegisterPage.name,

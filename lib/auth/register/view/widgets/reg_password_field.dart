@@ -33,9 +33,6 @@ class RegisterpassField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText: state.passwordInput.invalid
-                  ? 'complete correctamente la contraseña'
-                  : null,
             ),
           ),
         );

@@ -1,6 +1,7 @@
-import 'package:bakery/auth/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../autho/login/cubit/login_cubit.dart';
 
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key});
@@ -34,9 +35,6 @@ class PasswordField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText: state.passwordInput.invalid
-                  ? 'Min 6 caracteres y 1 numero'
-                  : null,
             ),
           ),
         );

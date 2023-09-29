@@ -33,9 +33,6 @@ class RegisterphoneField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText: state.phoneInput.invalid
-                  ? 'complete sin espacios ni 0 '
-                  : null,
             ),
           ),
         );

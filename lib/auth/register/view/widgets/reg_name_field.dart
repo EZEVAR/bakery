@@ -33,9 +33,6 @@ class RegisternameField extends StatelessWidget {
               labelStyle: TextStyle(
                 color: Colors.white,
               ),
-              errorText: state.nameInput.invalid
-                  ? 'complete correctamente el Nombre'
-                  : null,
             ),
           ),
         );

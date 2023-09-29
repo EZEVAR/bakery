@@ -24,13 +24,13 @@ class SignupField extends StatelessWidget {
             onPressed: () {
               /// state.statusName.value
               /// Recordar el usar el .value cuando se usa Formz
-              context.read<RegisterCubit>().addUsuario(
-                    state.nameInput.value,
-                    state.lastnameInput.value,
-                    state.emailInput.value,
-                    state.passwordInput.value,
-                    state.phoneInput.value,
-                  );
+              // context.read<RegisterCubit>().addUsuario(
+              //       state.nameInput.value,
+              //       state.lastnameInput.value,
+              //       state.emailInput.value,
+              //       state.passwordInput.value,
+              //       state.phoneInput.value,
+              //     );
             },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(80.0)),
