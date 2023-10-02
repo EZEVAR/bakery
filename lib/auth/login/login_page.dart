@@ -1,15 +1,22 @@
 import 'package:bakery/auth/login/cubit/login_cubit.dart';
-import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
-import 'package:bakery/auth/login/view/widgets/custom_password_field.dart';
-import 'package:bakery/auth/login/view/widgets/custom_submitbutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../services/firebase/firebase_service.dart';
+import '../../services/firebase/firebase_service.dart';
 
-class LoginView extends StatelessWidget {
-  LoginView({super.key});
+import 'view/widgets/form_container_widget.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+  static const name = 'login';
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final bool _isSigning = false;
 
   final FirebaseAuthService _auth = FirebaseAuthService();
 
@@ -20,7 +27,7 @@ class LoginView extends StatelessWidget {
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
-    super.toString();
+    super.dispose();
   }
 
   @override
@@ -57,45 +64,51 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
 
-                EmailField(_emailController),
-                const SizedBox(
-                  height: 25,
+                FormContainerWidget(
+                  controller: _emailController,
+                  hintText: "Email",
+                  isPasswordField: false,
                 ),
-                PasswordField(_passwordController),
                 const SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
-                // SignupField(_signIn),
+                FormContainerWidget(
+                  controller: _passwordController,
+                  hintText: "Password",
+                  isPasswordField: true,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+
                 TextButton(
-                  onPressed: () async {
-                    {
-                      String email = _emailController.text;
-                      String password = _passwordController.text;
-
-                      User? user = await _auth.signInWithEmailAndPassword(
-                          email, password);
-
-                      if (user != null) {
-                        print("User is successfully signedIn");
-                        ;
-                      } else {
-                        print("Some error happend");
-                      }
-                    }
-                  },
+                  onPressed: _signIn,
+                  // onPressed: () => GoRouter.of(context).go('/product'),
                   child: Container(
-                    width: double.infinity,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 10),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 60.0,
+                      width: 175.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25.0),
+                          gradient: const LinearGradient(colors: [
+                            Color.fromARGB(255, 247, 11, 164),
+                            Color.fromARGB(255, 248, 96, 197)
+                          ])),
+                      padding: const EdgeInsets.all(0),
+                      child: const Text(
+                        "LOGIN",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Login",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    )),
                   ),
                 ),
 
@@ -111,6 +124,7 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -145,17 +159,17 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  // void _signIn() async {
-  //   String email = _emailController.text;
-  //   String password = _passwordController.text;
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
 
-  //   User? user = await _auth.signInWithEmailAndPassword(email, password);
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
 
-  //   if (user != null) {
-  //     print("User is successfully signedIn");
-  //     Navigator.pushNamed("/product" as BuildContext);
-  //   } else {
-  //     print("Some error happend");
-  //   }
-  // }
+    if (user != null) {
+      print("User is successfully signedIn");
+      () => GoRouter.of(context).go('/product');
+    } else {
+      print("Some error happend");
+    }
+  }
 }

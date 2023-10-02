@@ -8,13 +8,6 @@ class SignupField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Delete the following fields
-    // String name = "";
-    // String lastname = '';
-    // String email = '';
-    // String password = '';
-    // String phone = '';
-
     return BlocBuilder<RegisterCubit, RegisterState>(
       builder: (context, state) {
         return Container(
@@ -22,8 +15,6 @@ class SignupField extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           child: MaterialButton(
             onPressed: () {
-              /// state.statusName.value
-              /// Recordar el usar el .value cuando se usa Formz
               context.read<RegisterCubit>().addUsuario(
                     state.nameInput.value,
                     state.lastnameInput.value,

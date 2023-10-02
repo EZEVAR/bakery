@@ -1,26 +1,34 @@
-import 'package:bakery/auth/login/cubit/login_cubit.dart';
-import 'package:bakery/auth/login/view/widgets/custom_email_field.dart';
-import 'package:bakery/auth/login/view/widgets/custom_password_field.dart';
-import 'package:bakery/auth/login/view/widgets/custom_submitbutton.dart';
+import 'package:bakery/auth/login/view/login_page.dart';
+import 'package:bakery/auth/login/view/widgets/form_container_widget.dart';
+import 'package:bakery/auth/register/view/widgets/signupbutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../services/firebase/firebase_service.dart';
+import '../../services/firebase/firebase_service.dart';
+import 'cubit/login_cubit.dart';
 
-class LoginView extends StatelessWidget {
-  LoginView({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+  static const name = 'signup';
 
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   final FirebaseAuthService _auth = FirebaseAuthService();
 
+  TextEditingController _usernameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
+    _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    super.toString();
+    super.dispose();
   }
 
   @override
@@ -57,42 +65,41 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
 
-                EmailField(_emailController),
-                const SizedBox(
-                  height: 25,
+                FormContainerWidget(
+                  controller: _usernameController,
+                  hintText: "Username",
+                  isPasswordField: false,
                 ),
-                PasswordField(_passwordController),
                 const SizedBox(
-                  height: 25,
+                  height: 10,
                 ),
-                // SignupField(_signIn),
-                TextButton(
-                  onPressed: () async {
-                    {
-                      String email = _emailController.text;
-                      String password = _passwordController.text;
+                FormContainerWidget(
+                  controller: _emailController,
+                  hintText: "Email",
+                  isPasswordField: false,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                FormContainerWidget(
+                  controller: _passwordController,
+                  hintText: "Password",
+                  isPasswordField: true,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                // const SignupField(),
 
-                      User? user = await _auth.signInWithEmailAndPassword(
-                          email, password);
-
-                      if (user != null) {
-                        print("User is successfully signedIn");
-                        ;
-                      } else {
-                        print("Some error happend");
-                      }
-                    }
-                  },
+                GestureDetector(
+                  onTap: _signUp,
                   child: Container(
-                    width: double.infinity,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 10),
                     child: const Center(
                         child: Text(
-                      "Login",
+                      "Sign Up",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     )),
@@ -115,7 +122,7 @@ class LoginView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Create an account.",
+                      "Already have an account?",
                       style: TextStyle(
                         color: Color.fromARGB(255, 250, 249, 249),
                         fontSize: 18,
@@ -125,9 +132,9 @@ class LoginView extends StatelessWidget {
                       width: 5,
                     ),
                     TextButton(
-                        onPressed: () => context.go('/signup'),
+                        onPressed: () => context.go('/login'),
                         child: const Text(
-                          "Register",
+                          "Login",
                           style: TextStyle(
                             color: Color.fromARGB(255, 252, 249, 250),
                             fontWeight: FontWeight.bold,
@@ -145,17 +152,18 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  // void _signIn() async {
-  //   String email = _emailController.text;
-  //   String password = _passwordController.text;
+  void _signUp() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
 
-  //   User? user = await _auth.signInWithEmailAndPassword(email, password);
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
-  //   if (user != null) {
-  //     print("User is successfully signedIn");
-  //     Navigator.pushNamed("/product" as BuildContext);
-  //   } else {
-  //     print("Some error happend");
-  //   }
-  // }
+    if (user != null) {
+      print("User is successfully created");
+      Navigator.pushNamed(context, "/product");
+    } else {
+      print("Some error happend");
+    }
+  }
 }

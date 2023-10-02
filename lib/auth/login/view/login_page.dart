@@ -1,5 +1,6 @@
 import 'package:bakery/auth/login/cubit/login_cubit.dart';
 import 'package:bakery/auth/login/view/login_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,8 +12,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginCubit(),
-      child: const LoginView(),
+      create: (context) => LoginCubit(FirebaseAuth.instance),
+      child: LoginView(),
     );
   }
 }

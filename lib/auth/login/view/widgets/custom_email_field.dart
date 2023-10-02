@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  const EmailField(TextEditingController emailController, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,6 @@ class EmailField extends StatelessWidget {
                   state.emailInput.invalid ? 'complete correct email' : null,
             ),
           ),
-          
         );
       },
     );
