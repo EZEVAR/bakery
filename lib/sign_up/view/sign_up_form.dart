@@ -1,4 +1,4 @@
-import 'package:bakery/autho/sign_up/sign_up.dart';
+import 'package:bakery/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';

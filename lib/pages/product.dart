@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import '../app/bloc/app_bloc.dart';
 import '../tab_bar_view/birthday_tab.dart';
 import '../tab_bar_view/cakepiece_tab.dart';
 import '../tab_bar_view/cupcake_tab.dart';
@@ -13,11 +15,15 @@ class MyProductPage extends StatefulWidget {
   static const name = 'product';
   @override
   MyProductPageState createState() => MyProductPageState();
+
+  static Page<void> page() => const MaterialPage<void>(child: MyProductPage());
 }
 
 class MyProductPageState extends State<MyProductPage> {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final user = context.select((AppBloc bloc) => bloc.state.user);
     List<Widget> cakeTabs = [
       CakeTabs(
           iconPath: 'assets/icons/birthday-cakeicon.png',
@@ -58,6 +64,13 @@ class MyProductPageState extends State<MyProductPage> {
                 size: 30,
               ),
               onPressed: () {},
+            ),
+            IconButton(
+              key: const Key('homePage_logout_iconButton'),
+              icon: const Icon(Icons.exit_to_app),
+              onPressed: () {
+                context.read<AppBloc>().add(const AppLogoutRequested());
+              },
             ),
             IconButton(
               icon: const Icon(

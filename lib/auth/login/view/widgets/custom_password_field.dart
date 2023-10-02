@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../autho/login/cubit/login_cubit.dart';
+import '../../../../login/cubit/login_cubit.dart';
 
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key});

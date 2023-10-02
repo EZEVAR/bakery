@@ -1,9 +1,10 @@
-import 'package:bakery/autho/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../sign_up/sign_up.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:formz/formz.dart';
+
+import '../cubit/login_cubit.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -127,9 +128,9 @@ class _LoginButton extends StatelessWidget {
                 key: const Key('loginForm_continue_raisedButton'),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(80),
                   ),
-                  backgroundColor: const Color(0xFFFFD600),
+                  backgroundColor: Color.fromARGB(255, 254, 4, 125),
                 ),
                 onPressed: state.isValid
                     ? () => context.read<LoginCubit>().logInWithCredentials()
@@ -172,7 +173,7 @@ class _SignUpButton extends StatelessWidget {
       onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
       child: Text(
         'CREATE ACCOUNT',
-        style: TextStyle(color: theme.primaryColor),
+        style: TextStyle(color: Colors.white),
       ),
     );
   }

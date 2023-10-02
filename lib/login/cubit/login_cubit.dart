@@ -1,8 +1,9 @@
+import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:form_inputs/form_inputs.dart';
 import 'package:formz/formz.dart';
-import 'package:bakery/packages/authentication_repository/lib/authentication_repository.dart';
-import 'package:bakery/packages/form_inputs/lib/form_inputs.dart';
+
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
