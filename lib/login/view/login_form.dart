@@ -130,7 +130,7 @@ class _LoginButton extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(80),
                   ),
-                  backgroundColor: Color.fromARGB(255, 254, 4, 125),
+                  backgroundColor: const Color.fromARGB(255, 254, 4, 125),
                 ),
                 onPressed: state.isValid
                     ? () => context.read<LoginCubit>().logInWithCredentials()
@@ -167,11 +167,10 @@ class _GoogleLoginButton extends StatelessWidget {
 class _SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return TextButton(
       key: const Key('loginForm_createAccount_flatButton'),
       onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
-      child: Text(
+      child: const Text(
         'CREATE ACCOUNT',
         style: TextStyle(color: Colors.white),
       ),

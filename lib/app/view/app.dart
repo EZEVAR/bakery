@@ -1,9 +1,7 @@
 import 'package:authentication_repository/authentication_repository.dart';
-import 'package:bakery/pages/product.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import '../../features/list_products/cubit/product_list_cubit.dart';
 import '../../theme.dart';
 import '../bloc/app_bloc.dart';
 import '../routes/routes.dart';
@@ -27,12 +25,6 @@ class App extends StatelessWidget {
               authenticationRepository: _authenticationRepository,
             ),
           ),
-
-          // BlocProvider(
-          //   create: (context) => MyProductPage(
-          //     DatabaseRepositoryImpl(),
-          //   ),
-          // ),
         ],
         child: const AppView(),
       ),
@@ -46,6 +38,7 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: theme,
       home: FlowBuilder<AppStatus>(
         state: context.select((AppBloc bloc) => bloc.state.status),
