@@ -9,6 +9,7 @@ import '../tab_bar_view/cupcake_tab.dart';
 import '../tab_bar_view/muffins_tab.dart';
 import '../tab_bar_view/wedding_tab.dart';
 import '../controller.dart/cake_tabs.dart';
+import '../theme.dart';
 
 class MyProductPage extends StatefulWidget {
   const MyProductPage({super.key});
@@ -22,8 +23,8 @@ class MyProductPage extends StatefulWidget {
 class MyProductPageState extends State<MyProductPage> {
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final user = context.select((AppBloc bloc) => bloc.state.user);
+    // final textTheme = Theme.of(context).textTheme;
+    // final user = context.select((AppBloc bloc) => bloc.state.user);
     List<Widget> cakeTabs = [
       CakeTabs(
           iconPath: 'assets/icons/birthday-cakeicon.png',
@@ -44,41 +45,31 @@ class MyProductPageState extends State<MyProductPage> {
     return DefaultTabController(
       length: cakeTabs.length,
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.purple[50],
           title: const Text(
             'Bakery',
-            style: TextStyle(color: Color.fromARGB(255, 197, 4, 226)),
-          ),
-          elevation: 0.0,
-          leading: const Icon(
-            Icons.menu,
-            color: Color.fromARGB(255, 44, 1, 51),
-            size: 30,
+            style: TextStyle(
+              color: Color.fromARGB(255, 8, 8, 8),
+            ),
           ),
           actions: [
             IconButton(
               icon: const Icon(
                 Icons.shopping_cart_outlined,
-                color: Colors.red,
+                color: Color.fromARGB(255, 12, 12, 12),
                 size: 30,
               ),
               onPressed: () {},
             ),
             IconButton(
               key: const Key('homePage_logout_iconButton'),
+              color: Color.fromARGB(243, 252, 2, 43),
               icon: const Icon(Icons.exit_to_app),
               onPressed: () {
                 context.read<AppBloc>().add(const AppLogoutRequested());
               },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.person,
-                color: Colors.blue,
-                size: 30,
-              ),
-              onPressed: () {},
             ),
           ],
         ),
@@ -86,7 +77,7 @@ class MyProductPageState extends State<MyProductPage> {
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                backgroundColor: Colors.transparent,
+                backgroundColor: Color.fromARGB(0, 255, 254, 254),
                 expandedHeight: 180,
                 floating: true,
                 snap: true,
@@ -99,13 +90,12 @@ class MyProductPageState extends State<MyProductPage> {
                           height: 200,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.purple[50],
+                            color: const Color.fromARGB(255, 251, 250, 251),
                           ),
                           child: ImageSlideshow(
                             width: double.infinity,
                             initialPage: 0,
-                            indicatorColor:
-                                const Color.fromARGB(255, 230, 223, 231),
+                            indicatorColor: Color.fromARGB(255, 251, 249, 252),
                             onPageChanged: (value) {},
                             autoPlayInterval: 5000,
                             isLoop: true,

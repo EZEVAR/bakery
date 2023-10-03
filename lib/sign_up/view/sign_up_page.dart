@@ -49,7 +49,7 @@ class SignUpPage extends StatelessWidget {
                       SignUpCubit(context.read<AuthenticationRepository>()),
                   child: const SignUpForm(),
                 ),
-                const SizedBox(height: 5), 
+                const SizedBox(height: 5),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();

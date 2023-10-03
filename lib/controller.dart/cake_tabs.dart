@@ -16,9 +16,9 @@ class CakeTabs extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: const Color.fromARGB(255, 248, 83, 83).withOpacity(0.5),
+              color: Color.fromARGB(255, 22, 2, 69).withOpacity(0.8),
               spreadRadius: 1,
-              blurRadius: 7,
+              blurRadius: 9,
               offset: const Offset(0, 3),
             ),
           ],
