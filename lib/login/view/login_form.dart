@@ -12,63 +12,32 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
-        listener: (context, state) {
-          if (state.status.isFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                SnackBar(
-                  content: Text(state.errorMessage ?? 'Authentication Failure'),
-                ),
-              );
-          }
-        },
-        child: Scaffold(
-            body: Container(
-          decoration: BoxDecoration(
-            color: Colors.black,
-            image: DecorationImage(
-              image: const AssetImage('assets/fondo.jpg'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.5),
-                BlendMode.dstATop,
+      listener: (context, state) {
+        if (state.status.isFailure) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              SnackBar(
+                content: Text(state.errorMessage ?? 'Authentication Failure'),
               ),
-            ),
-          ),
-          padding: const EdgeInsets.all(25),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(
-                    height: 150,
-                    width: 150,
-                    child: Image.asset("assets/icons/cupcakeicon.png"),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 50),
-                    child: const Text(
-                      'Bakery',
-                      style: TextStyle(fontSize: 35, color: Colors.white),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  _EmailInput(),
-                  const SizedBox(height: 8),
-                  _PasswordInput(),
-                  const SizedBox(height: 8),
-                  _LoginButton(),
-                  const SizedBox(height: 8),
-                  _GoogleLoginButton(),
-                  const SizedBox(height: 4),
-                  _SignUpButton(),
-                ],
-              ),
-            ),
-          ),
-        )));
+            );
+        }
+      },
+      child: Column(
+        children: [
+          const SizedBox(height: 16),
+          _EmailInput(),
+          const SizedBox(height: 8),
+          _PasswordInput(),
+          const SizedBox(height: 8),
+          _LoginButton(),
+          const SizedBox(height: 8),
+          _GoogleLoginButton(),
+          const SizedBox(height: 4),
+          _SignUpButton(),
+        ],
+      ),
+    );
   }
 }
 

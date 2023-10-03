@@ -10,7 +10,7 @@ class CakePieceTile extends StatelessWidget {
   final String flavor;
   final String price;
   final String imagePath;
-  final colors;
+  final dynamic colors;
 
   @override
   Widget build(BuildContext context) {

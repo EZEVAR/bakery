@@ -10,8 +10,7 @@ class WeddingCakeTile extends StatelessWidget {
   final String flavor;
   final String price;
   final String imagePath;
-  // ignore: prefer_typing_uninitialized_variables
-  final colors;
+  final dynamic colors;
 
   @override
   Widget build(BuildContext context) {

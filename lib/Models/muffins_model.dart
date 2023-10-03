@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MuffinsModel {
   final String flavor;
   final String price;
-  final color;
+  final dynamic color;
   final String imagePath;
   MuffinsModel(
       {required this.flavor,

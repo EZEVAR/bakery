@@ -9,7 +9,6 @@ import '../tab_bar_view/cupcake_tab.dart';
 import '../tab_bar_view/muffins_tab.dart';
 import '../tab_bar_view/wedding_tab.dart';
 import '../controller.dart/cake_tabs.dart';
-import '../theme.dart';
 
 class MyProductPage extends StatefulWidget {
   const MyProductPage({super.key});

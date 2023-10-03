@@ -98,7 +98,7 @@ class BirthdayCakePage extends StatelessWidget {
                 child: Container(
                   height: 100,
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: BoxDecoration( 
                     color: Colors.white,
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(20),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CakepieceModel {
   final String flavor;
   final String price;
-  final color;
+  final dynamic color;
   final String imagePath;
   CakepieceModel(
       {required this.flavor,
