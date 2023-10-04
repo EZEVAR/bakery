@@ -1,3 +1,4 @@
+import 'package:bakery/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
@@ -60,7 +61,10 @@ class MyProductPageState extends State<MyProductPage> {
                 color: Color.fromARGB(255, 12, 12, 12),
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => OnBoardingPage()));
+              },
             ),
             IconButton(
               key: const Key('homePage_logout_iconButton'),

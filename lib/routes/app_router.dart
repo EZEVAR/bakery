@@ -1,5 +1,6 @@
 import 'package:bakery/login/view/login_page.dart';
 import 'package:bakery/auth/register/view/register_page.dart';
+import 'package:bakery/pages/onboarding_page.dart';
 import 'package:bakery/sign_up/sign_up.dart';
 import 'package:bakery/pages/product.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,11 @@ class AppRouter {
           navigatorKey: GlobalKey<NavigatorState>(),
           initialLocation: '/login',
           routes: [
+            GoRoute(
+              name: OnBoardingPage.name,
+              path: '/onboarding',
+              builder: (context, state) => const OnBoardingPage(),
+            ),
             GoRoute(
               name: MyProductPage.name,
               path: '/product',
