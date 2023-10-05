@@ -1,7 +1,9 @@
 import 'package:authentication_repository/authentication_repository.dart';
-import 'package:bakery/sign_up/sign_up.dart';
+import 'package:bakery/sign_up/view/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubit/sign_up_cubit.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});

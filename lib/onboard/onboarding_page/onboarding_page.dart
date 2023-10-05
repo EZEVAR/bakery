@@ -1,5 +1,5 @@
-import 'package:bakery/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -57,9 +57,7 @@ class OnBoardingPage extends StatelessWidget {
       activeShape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ));
-  void goToHome(BuildContext context) => Navigator.of(context)
-      .pushReplacement(MaterialPageRoute(builder: (_) => const LoginPage()));
-
+  void goToHome(BuildContext context) => context.go('/login');
   Widget buildImage(String path) => Center(child: Image.asset(path));
 
   PageDecoration buildDecoration() => PageDecoration(
