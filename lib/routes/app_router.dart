@@ -12,11 +12,11 @@ class AppRouter {
   AppRouter()
       : _router = GoRouter(
           navigatorKey: GlobalKey<NavigatorState>(),
-          initialLocation: '/login',
+          initialLocation: '/onboard',
           routes: [
             GoRoute(
               name: OnBoardingPage.name,
-              path: '/onboarding',
+              path: '/onboard',
               builder: (context, state) => const OnBoardingPage(),
             ),
             GoRoute(

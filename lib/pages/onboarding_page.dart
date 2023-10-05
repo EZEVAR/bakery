@@ -1,51 +1,44 @@
-import 'package:bakery/pages/product.dart';
+import 'package:bakery/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
-  static const name = 'onboarding';
+  static const name = 'onboard';
 
   @override
   Widget build(BuildContext context) {
     return IntroductionScreen(
       pages: [
         PageViewModel(
-          title: 'Bienvenido a nuestra Pasteleria',
-          body:
-              'Enjoy your favorite cuisine at your couch watch your favorite TV Show',
+          title: 'BIENVENIDO A NUESTRA PASTELERIA',
+          body: 'Disfrute de los mejores productos. ',
           image: buildImage('assets/onboard1bg.png'),
           decoration: buildDecoration(),
         ),
         PageViewModel(
-          title: 'EXTRA FAST DELIVERY',
-          body: 'Your food will be delivered quickly to you fresh and hot',
+          title: 'VELOZ DELIVERY',
+          body: 'Haga su pedido y lo llevaremos hasta su puerta.',
           image: buildImage('assets/onboard2bg.png'),
           decoration: buildDecoration(),
         ),
         PageViewModel(
-          title: 'FIND YOUR FAVORITE FOOD',
-          body:
-              'Search for the best restaurant in your area and choose your favorite food ',
-          image: buildImage('assets/onboard3bg.png'),
-          decoration: buildDecoration(),
-        ),
-        PageViewModel(
-          title: 'ENJOY YOUR MEAL',
-          body: 'Enjoy your favorite food within minutes',
+          title: 'DISFRUTE DE LOS PRODUCTOS',
+          body: 'Deleitese con los mejores postres todos los dias.',
           image: buildImage('assets/onboard4bg.png'),
           decoration: buildDecoration(),
         ),
       ],
-      next: Icon(
+      next: const Icon(
         Icons.navigate_next,
         size: 40,
         color: Colors.red,
       ),
-      done: Text('Done', style: TextStyle(color: Colors.red, fontSize: 20)),
+      done:
+          const Text('Done', style: TextStyle(color: Colors.red, fontSize: 20)),
       onDone: () => goToHome(context),
       showSkipButton: true,
-      skip: Text(
+      skip: const Text(
         'Skip',
         style: TextStyle(color: Colors.red, fontSize: 20),
       ), //by default, skip goes to the last page
@@ -58,25 +51,23 @@ class OnBoardingPage extends StatelessWidget {
 
   DotsDecorator getDotDecoration() => DotsDecorator(
       color: Colors.grey,
-      size: Size(10, 10),
+      size: const Size(10, 10),
       activeColor: Colors.redAccent,
-      activeSize: Size(22, 10),
+      activeSize: const Size(22, 10),
       activeShape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
       ));
-  void goToHome(BuildContext context) => Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const MyProductPage()));
-  // void goToHome(BuildContext context) =>
-  //     GoRouter.of(context).replace('/product');
+  void goToHome(BuildContext context) => Navigator.of(context)
+      .pushReplacement(MaterialPageRoute(builder: (_) => const LoginPage()));
 
   Widget buildImage(String path) => Center(child: Image.asset(path));
 
   PageDecoration buildDecoration() => PageDecoration(
-        titleTextStyle: TextStyle(
+        titleTextStyle: const TextStyle(
             fontSize: 25, fontWeight: FontWeight.bold, color: Colors.red),
-        bodyTextStyle: TextStyle(fontSize: 20),
+        bodyTextStyle: const TextStyle(fontSize: 20),
         pageColor: Colors.purple.shade50,
-        imagePadding: EdgeInsets.all(0),
+        imagePadding: const EdgeInsets.all(0),
       );
 
   static page() {}
