@@ -1,3 +1,4 @@
+import 'package:bakery/features/list_products/view/product_list_page.dart';
 import 'package:bakery/onboard/onboarding_page/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,13 +63,15 @@ class MyProductPageState extends State<MyProductPage> {
                 size: 30,
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => OnBoardingPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProductListPage()));
               },
             ),
             IconButton(
               key: const Key('homePage_logout_iconButton'),
-              color: Color.fromARGB(243, 252, 2, 43),
+              color: const Color.fromARGB(243, 252, 2, 43),
               icon: const Icon(Icons.exit_to_app),
               onPressed: () {
                 context.read<AppBloc>().add(const AppLogoutRequested());
@@ -80,7 +83,7 @@ class MyProductPageState extends State<MyProductPage> {
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                backgroundColor: Color.fromARGB(0, 255, 254, 254),
+                backgroundColor: const Color.fromARGB(0, 255, 254, 254),
                 expandedHeight: 180,
                 floating: true,
                 snap: true,
@@ -92,13 +95,14 @@ class MyProductPageState extends State<MyProductPage> {
                           padding: const EdgeInsets.all(20),
                           height: 200,
                           width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 251, 250, 251),
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 251, 250, 251),
                           ),
                           child: ImageSlideshow(
                             width: double.infinity,
                             initialPage: 0,
-                            indicatorColor: Color.fromARGB(255, 251, 249, 252),
+                            indicatorColor:
+                                const Color.fromARGB(255, 251, 249, 252),
                             onPageChanged: (value) {},
                             autoPlayInterval: 5000,
                             isLoop: true,

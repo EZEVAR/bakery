@@ -5,6 +5,7 @@ import 'package:bakery/pages/product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/list_products/view/product_list_page.dart';
 import '../login/view/login_page.dart';
 import '../sign_up/view/sign_up_page.dart';
 
@@ -34,11 +35,11 @@ class AppRouter {
               path: '/onboard',
               builder: (context, state) => const OnBoardingPage(),
             ),
-            // GoRoute(
-            //   name: MyProductPage.name,
-            //   path: '/product',
-            //   builder: (context, state) => const MyProductPage(),
-            // ),
+            GoRoute(
+              name: ProductListPage.name,
+              path: '/listaproducto',
+              builder: (context, state) => const ProductListPage(),
+            ),
             GoRoute(
               name: LoginPage.name,
               path: '/login',

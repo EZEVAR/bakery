@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import '../../features/list_products/models/product.dart';
+
 class DatabaseService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -14,36 +16,61 @@ class DatabaseService {
     });
   }
 
-  // Future<List<Product>> getProducts() async {
-  //   QuerySnapshot<Map<String, dynamic>> productosSnapshot =
-  //       await _db.collection('productos').get();
+  Future<void> addProduct(
+      String nombre, String descripcion, double precio) async {
+    await _db.collection('productos').add({
+      'nombre': nombre,
+      'descripcion': descripcion,
+      'precio': precio,
+    });
+  }
 
-  //   final List<Product> listaProductos = productosSnapshot.docs.map((doc) {
-  //     return Product.fromDocumentSnapshot(doc);
-  //   }).toList();
-  //   return listaProductos;
-  // }
+  Future<List<Product>> getProducts() async {
+    QuerySnapshot<Map<String, dynamic>> productosSnapshot =
+        await _db.collection('productos').get();
 
-  // Stream<List<Product>> getProductsStream() {
-  //   Stream<QuerySnapshot<Map<String, dynamic>>> productosStream =
-  //       _db.collection('productos').snapshots();
+    final List<Product> listaProductos = productosSnapshot.docs.map((doc) {
+      return Product.fromDocumentSnapshot(doc);
+    }).toList();
+    return listaProductos;
+  }
 
-  //   // final List<Product> listaProductos = productosSnapshot.docs.map((doc) {
-  //   //   return Product.fromDocumentSnapshot(doc);
-  //   // }).toList();
-  //   // return listaProductos;
-  //   return productosStream.map((snapshot) {
-  //     return snapshot.docs
-  //         .map((doc) => Product.fromDocumentSnapshot(doc))
-  //         .toList();
-  //   });
-  // }
+  Stream<List<Product>> getProductsStream() {
+    Stream<QuerySnapshot<Map<String, dynamic>>> productosStream =
+        _db.collection('productos').snapshots();
 
-  // Future<void> saveDummyData() async {
-  //   final usuario = [];
+    // final List<Product> listaProductos = productosSnapshot.docs.map((doc) {
+    //   return Product.fromDocumentSnapshot(doc);
+    // }).toList();
+    // return listaProductos;
+    return productosStream.map((snapshot) {
+      return snapshot.docs
+          .map((doc) => Product.fromDocumentSnapshot(doc))
+          .toList();
+    });
+  }
 
-  //   for (var usuario in usuarios) {
-  //     await _db.collection('usuarios').add(usuario);
-  //   }
-  // }
+  Future<void> saveDummyData() async {
+    final productos = [
+      {
+        'nombre': 'Camiseta',
+        'descripcion': 'camiseta roja',
+        'precio': 20.0,
+      },
+      {
+        'nombre': 'Pantalones',
+        'descripcion': 'pantalon azul',
+        'precio': 30.0,
+      },
+      {
+        'nombre': 'Zapatos',
+        'descripcion': 'zapato negro',
+        'precio': 50.0,
+      },
+    ];
+
+    for (var producto in productos) {
+      await _db.collection('productos').add(producto);
+    }
+  }
 }

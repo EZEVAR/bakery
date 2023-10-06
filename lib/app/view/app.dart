@@ -1,7 +1,11 @@
 import 'package:authentication_repository/authentication_repository.dart';
+import 'package:bakery/services/database/database_repository_impl.dart';
+import 'package:bakery/services/database/database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/list_products/cubit/product_list_cubit.dart';
+import '../../features/list_products/view/product_list_page.dart';
 import '../../routes/app_router.dart';
 import '../../theme.dart';
 import '../bloc/app_bloc.dart';
@@ -23,6 +27,11 @@ class App extends StatelessWidget {
           BlocProvider(
             create: (BuildContext context) => AppBloc(
               authenticationRepository: _authenticationRepository,
+            ),
+          ),
+          BlocProvider(
+            create: (context) => ProductListCubit(
+              DatabaseRepositoryImpl(),
             ),
           ),
         ],
