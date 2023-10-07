@@ -1,4 +1,5 @@
 import 'package:bakery/features/list_products/view/product_list_page.dart';
+import 'package:bakery/features/list_products/view/list_productos.dart';
 import 'package:bakery/onboard/onboarding_page/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
