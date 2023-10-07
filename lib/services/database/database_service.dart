@@ -53,19 +53,19 @@ class DatabaseService {
   Future<void> saveDummyData() async {
     final productos = [
       {
-        'nombre': 'Camiseta',
-        'descripcion': 'camiseta roja',
-        'precio': 20.0,
+        'nombre': 'muffins',
+        'descripcion': 'con relleno de crema de mani',
+        'precio': 650.0,
       },
       {
-        'nombre': 'Pantalones',
-        'descripcion': 'pantalon azul',
-        'precio': 30.0,
+        'nombre': 'donas',
+        'descripcion': 'glaseadas con reyeno',
+        'precio': 350.0,
       },
       {
-        'nombre': 'Zapatos',
-        'descripcion': 'zapato negro',
-        'precio': 50.0,
+        'nombre': 'churros',
+        'descripcion': 'rellenos de dulce de leche',
+        'precio': 1300.0,
       },
     ];
 
