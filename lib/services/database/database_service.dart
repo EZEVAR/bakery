@@ -5,13 +5,12 @@ import '../../features/list_products/models/product.dart';
 class DatabaseService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  Future<void> addUsuario(String name, String lastname, String email,
-      String password, String phone) async {
+  Future<void> addUsuario(
+      String name, String lastname, String email, String phone) async {
     await _db.collection('usuarios').add({
       'name': name,
       'lastname': lastname,
       'email': email,
-      'password': password,
       'phone': phone,
     });
   }

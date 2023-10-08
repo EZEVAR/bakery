@@ -26,19 +26,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     final email = EmailInput.dirty(value);
     emit(state.copyWith(
       emailInput: email,
-      status: Formz.validate([
-        email,
-        state.passwordInput,
-      ]),
-    ));
-  }
-
-  void passwordChanged(String value) {
-    final password = PasswordInput.dirty(value);
-    emit(state.copyWith(
-      passwordInput: password,
-      status: Formz.validate(
-          [state.emailInput, state.nameInput, state.lastnameInput, password]),
+      status: Formz.validate([email]),
     ));
   }
 
@@ -46,8 +34,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     final name = NameInput.dirty(value);
     emit(state.copyWith(
       nameInput: name,
-      status: Formz.validate(
-          [state.emailInput, state.passwordInput, state.lastnameInput, name]),
+      status: Formz.validate([state.emailInput, state.lastnameInput, name]),
     ));
   }
 
@@ -55,8 +42,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     final lastname = LastnameInput.dirty(value);
     emit(state.copyWith(
       lastnameInput: lastname,
-      status: Formz.validate(
-          [state.emailInput, state.passwordInput, state.nameInput, lastname]),
+      status: Formz.validate([state.emailInput, state.nameInput, lastname]),
     ));
   }
 
@@ -64,13 +50,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     final phone = PhoneInput.dirty(value);
     emit(state.copyWith(
       phoneInput: phone,
-      status: Formz.validate([
-        state.emailInput,
-        state.passwordInput,
-        state.lastnameInput,
-        state.nameInput,
-        phone
-      ]),
+      status: Formz.validate(
+          [state.emailInput, state.lastnameInput, state.nameInput, phone]),
     ));
   }
 }

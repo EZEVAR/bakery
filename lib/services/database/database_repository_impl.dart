@@ -5,9 +5,10 @@ import '../../features/list_products/models/product.dart';
 class DatabaseRepositoryImpl implements DatabaseRepository {
   DatabaseService service = DatabaseService();
 
-  Future<void> addUsuario(String name, String lastname, String email,
-      String password, String phone) {
-    return service.addUsuario(name, lastname, email, password, phone);
+  @override
+  Future<void> addUsuario(
+      String name, String lastname, String email, String phone) {
+    return service.addUsuario(name, lastname, email, phone);
   }
 
   @override
@@ -40,6 +41,12 @@ class DatabaseRepositoryImpl implements DatabaseRepository {
 // }
 
 abstract class DatabaseRepository {
+  Future<void> addUsuario(
+    String name,
+    String lastname,
+    String phone,
+    String email,
+  );
   Future<void> addProduct(String nombre, String descripcion, double precio);
   Future<List<Product>> getProducts();
   Stream<List<Product>> getProductsStream();
