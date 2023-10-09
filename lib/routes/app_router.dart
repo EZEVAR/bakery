@@ -4,10 +4,9 @@ import 'package:bakery/onboard/onboarding_page/onboarding_page.dart';
 import 'package:bakery/pages/product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import '../auth/login/view/login_page.dart';
+import '../auth/sign_up/view/sign_up_page.dart';
 import '../features/list_products/view/product_list_page.dart';
-import '../login/view/login_page.dart';
-import '../sign_up/view/sign_up_page.dart';
 
 class AppRouter {
   final AppBloc appBloc;

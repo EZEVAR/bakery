@@ -11,6 +11,7 @@ import '../tab_bar_view/cupcake_tab.dart';
 import '../tab_bar_view/muffins_tab.dart';
 import '../tab_bar_view/wedding_tab.dart';
 import '../controller.dart/cake_tabs.dart';
+import '../theme.dart';
 
 class MyProductPage extends StatefulWidget {
   const MyProductPage({super.key});
@@ -46,9 +47,9 @@ class MyProductPageState extends State<MyProductPage> {
     return DefaultTabController(
       length: cakeTabs.length,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: theme.scaffoldBackgroundColor,
         appBar: AppBar(
-          backgroundColor: Colors.purple[50],
+          backgroundColor: theme.primaryColorLight,
           title: const Text(
             'Bakery',
             style: TextStyle(

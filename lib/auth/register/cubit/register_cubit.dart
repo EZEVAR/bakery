@@ -11,16 +11,15 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final DatabaseRepository _databaseRepository;
 
-  // Future<void> addUsuario(String name, String lastname, String email,
-  //     String password, String phone) async {
-  //   emit(state.copyWith(loading: true));
+  Future<void> addUsuario(String name, String lastname, String email,
+      String password, String phone) async {
+    emit(state.copyWith(loading: true, status: true));
 
-  //   // TODO: Don't save user password
-  //   await _databaseRepository.addUsuario(
-  //       name, lastname, email, password, phone);
+    // TODO: Don't save user password
+    await _databaseRepository.addUsuario(name, lastname, email, phone);
 
-  //   emit(state.copyWith(loading: false));
-  // }
+    emit(state.copyWith(loading: false, status: true));
+  }
 
   void emailChanged(String value) {
     final email = EmailInput.dirty(value);
