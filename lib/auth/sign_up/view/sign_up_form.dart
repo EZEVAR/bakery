@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import '../../../theme.dart';
+import '../../../theme.dart';
 import '../cubit/sign_up_cubit.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -125,12 +126,15 @@ class _SignUpButton extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  backgroundColor: theme.colorScheme.primary,
+                  backgroundColor: theme.primaryColor,
                 ),
                 onPressed: state.isValid
                     ? () => context.read<SignUpCubit>().signUpFormSubmitted()
                     : null,
-                child: const Text('SIGN UP'),
+                child: const Text(
+                  'SIGN UP',
+                  style: TextStyle(color: Colors.white),
+                ),
               );
       },
     );
