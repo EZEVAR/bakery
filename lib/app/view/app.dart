@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/list_products/cubit/product_list_cubit.dart';
-import '../../features/list_products/view/product_list_page.dart';
 import '../../routes/app_router.dart';
 import '../../theme.dart';
 import '../bloc/app_bloc.dart';

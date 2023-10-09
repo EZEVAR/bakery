@@ -39,10 +39,6 @@ class DatabaseService {
     Stream<QuerySnapshot<Map<String, dynamic>>> productosStream =
         _db.collection('productos').snapshots();
 
-    // final List<Product> listaProductos = productosSnapshot.docs.map((doc) {
-    //   return Product.fromDocumentSnapshot(doc);
-    // }).toList();
-    // return listaProductos;
     return productosStream.map((snapshot) {
       return snapshot.docs
           .map((doc) => Product.fromDocumentSnapshot(doc))
@@ -51,23 +47,7 @@ class DatabaseService {
   }
 
   Future<void> saveDummyData() async {
-    final productos = [
-      {
-        'nombre': 'Camiseta',
-        'descripcion': 'camiseta roja',
-        'precio': 20.0,
-      },
-      {
-        'nombre': 'Pantalones',
-        'descripcion': 'pantalon azul',
-        'precio': 30.0,
-      },
-      {
-        'nombre': 'Zapatos',
-        'descripcion': 'zapato negro',
-        'precio': 50.0,
-      },
-    ];
+    final productos = [];
 
     for (var producto in productos) {
       await _db.collection('productos').add(producto);

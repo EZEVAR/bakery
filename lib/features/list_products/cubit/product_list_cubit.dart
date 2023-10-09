@@ -22,7 +22,6 @@ class ProductListCubit extends Cubit<ProductListState> {
   void getProducts() async {
     emit(state.copyWith(loading: true));
 
-    List<Product> productList = await _databaseRepository.getProducts();
     Stream<List<Product>> productListStream =
         _databaseRepository.getProductsStream();
 
