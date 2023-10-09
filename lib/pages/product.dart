@@ -1,5 +1,5 @@
 import 'package:bakery/features/list_products/view/product_list_page.dart';
-import 'package:bakery/onboard/onboarding_page/onboarding_page.dart';
+import 'package:bakery/widget/ofertacard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
@@ -62,12 +62,7 @@ class MyProductPageState extends State<MyProductPage> {
                 color: Color.fromARGB(255, 12, 12, 12),
                 size: 30,
               ),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProductListPage()));
-              },
+              onPressed: () {},
             ),
             IconButton(
               key: const Key('homePage_logout_iconButton'),
@@ -134,6 +129,7 @@ class MyProductPageState extends State<MyProductPage> {
           },
           body: Column(
             children: [
+              const OfertaCard(title: 'OFERTAS'),
               const Padding(
                 padding: EdgeInsets.only(top: 15.0, bottom: 10),
                 child: Text(

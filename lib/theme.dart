@@ -8,6 +8,7 @@ final theme = ThemeData(
   primaryColorDark: const Color.fromARGB(255, 84, 1, 82),
   primaryColorLight: const Color.fromARGB(255, 224, 115, 239),
   primaryColor: const Color.fromARGB(255, 252, 51, 122),
+  secondaryHeaderColor: Color.fromARGB(255, 25, 32, 75),
   colorScheme: const ColorScheme.light(secondary: Color(0xFF009688)),
   scaffoldBackgroundColor: const Color(0xFFE0F2F1),
   inputDecorationTheme: InputDecorationTheme(
