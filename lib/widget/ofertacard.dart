@@ -52,7 +52,7 @@ class OfertaCard extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Image.asset(
-              "mix.png",
+              "assets/mix.png",
               height: 100,
               width: 100,
               fit: BoxFit.cover,
