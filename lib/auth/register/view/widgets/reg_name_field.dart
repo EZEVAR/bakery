@@ -18,7 +18,6 @@ class RegisternameField extends StatelessWidget {
           ),
           child: TextFormField(
             onChanged: (value) {
-              print('Valor recibido en name field ${value}');
               context.read<RegisterCubit>().nameChanged(value);
             },
             style: const TextStyle(color: Colors.white),

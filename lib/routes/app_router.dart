@@ -20,7 +20,7 @@ class AppRouter {
             GoRoute(
               name: MyProductPage.name,
               path: "/product",
-              builder: (context, state) => MyProductPage(),
+              builder: (context, state) => const MyProductPage(),
               redirect: (context, state) {
                 print('Estado de la Auth ${appBloc.state.status.toString()}');
                 if (appBloc.state.status == AppStatus.unauthenticated) {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import '../../../theme.dart';
-import '../../../theme.dart';
 import '../cubit/sign_up_cubit.dart';
 
 class SignUpForm extends StatelessWidget {

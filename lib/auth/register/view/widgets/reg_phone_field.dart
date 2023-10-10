@@ -30,7 +30,7 @@ class RegisterphoneField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               labelText: 'Número de Telefono',
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                 color: Colors.white,
               ),
             ),

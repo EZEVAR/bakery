@@ -15,7 +15,6 @@ class RegisterCubit extends Cubit<RegisterState> {
       String password, String phone) async {
     emit(state.copyWith(loading: true, status: true));
 
-    // TODO: Don't save user password
     await _databaseRepository.addUsuario(name, lastname, email, phone);
 
     emit(state.copyWith(loading: false, status: true));

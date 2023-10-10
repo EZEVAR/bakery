@@ -7,13 +7,6 @@ class SignupField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Delete the following fields
-    // String name = "";
-    // String lastname = '';
-    // String email = '';
-    // String password = '';
-    // String phone = '';
-
     return BlocBuilder<RegisterCubit, RegisterState>(
       builder: (context, state) {
         return Container(
@@ -27,7 +20,6 @@ class SignupField extends StatelessWidget {
               //       state.nameInput.value,
               //       state.lastnameInput.value,
               //       state.emailInput.value,
-              //       state.passwordInput.value,
               //       state.phoneInput.value,
               //     );
             },

@@ -6,8 +6,8 @@ final theme = ThemeData(
   // colorSchemeSeed: Color.fromARGB(255, 78, 45, 1),.
 
   textTheme: GoogleFonts.openSansTextTheme(),
-  primaryColorDark: Color.fromARGB(255, 36, 1, 35),
-  primaryColorLight: Color.fromARGB(255, 129, 111, 164),
+  primaryColorDark: const Color.fromARGB(255, 36, 1, 35),
+  primaryColorLight: const Color.fromARGB(255, 129, 111, 164),
   primaryColor: const Color.fromARGB(255, 252, 51, 122),
   secondaryHeaderColor: const Color.fromARGB(255, 25, 32, 75),
   colorScheme: const ColorScheme.light(secondary: Color(0xFF009688)),

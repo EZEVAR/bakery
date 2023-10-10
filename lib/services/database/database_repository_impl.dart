@@ -32,14 +32,6 @@ class DatabaseRepositoryImpl implements DatabaseRepository {
   }
 }
 
-// abstract class DatabaseRepository {
-//   Future<void> addUsuario(String name, String lastname, String email,
-//       String password, String phone);
-//   // Future<List<Product>> getProducts();
-//   // Stream<List<Product>> getProductsStream();
-//   // Future<void> saveDummyData();
-// }
-
 abstract class DatabaseRepository {
   Future<void> addUsuario(
     String name,

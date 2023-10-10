@@ -18,7 +18,6 @@ class RegisteremailField extends StatelessWidget {
           ),
           child: TextFormField(
             onChanged: (value) {
-              print('Valor recibido en email field ${value}');
               context.read<RegisterCubit>().emailChanged(value);
             },
             style: const TextStyle(color: Colors.white),
@@ -30,7 +29,7 @@ class RegisteremailField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               labelText: 'Email Address',
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                 color: Colors.white,
               ),
             ),

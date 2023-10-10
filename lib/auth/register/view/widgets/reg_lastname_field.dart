@@ -18,7 +18,6 @@ class RegisterlastnameField extends StatelessWidget {
           ),
           child: TextFormField(
             onChanged: (value) {
-              print('Valor recibido en lastname field ${value}');
               context.read<RegisterCubit>().lastnameChanged(value);
             },
             style: const TextStyle(color: Colors.white),
@@ -30,7 +29,7 @@ class RegisterlastnameField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               labelText: 'Apellido',
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                 color: Colors.white,
               ),
             ),
