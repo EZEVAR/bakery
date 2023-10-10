@@ -16,7 +16,7 @@ class Product {
     return Product(
       nombre: doc.data()!['nombre'] ?? '',
       descripcion: doc.data()!['descripcion'] ?? '',
-      precio: doc.data()!['precio'] ?? 0.0,
+      precio: (doc.data()!['precio'] ?? 0).toDouble(),
     );
   }
 
