@@ -62,10 +62,13 @@ class CupCakeTiles extends StatelessWidget {
             ],
           ),
 
-          //Picture
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 12),
-            child: Image.asset(imagePath),
+          //Expanded Widget para la imagen
+          Expanded(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 36.0, vertical: 12),
+              child: Image.asset(imagePath),
+            ),
           ),
           //Flavor
           Text(
