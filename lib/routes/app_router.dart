@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../auth/login/view/login_page.dart';
 import '../auth/sign_up/view/sign_up_page.dart';
 import '../features/list_products/view/product_list_page.dart';
+import '../services/preference/shared_prefence.dart';
 
 class AppRouter {
   final AppBloc appBloc;
@@ -21,12 +22,16 @@ class AppRouter {
               name: MyProductPage.name,
               path: "/product",
               builder: (context, state) => const MyProductPage(),
-              redirect: (context, state) {
-                print('Estado de la Auth ${appBloc.state.status.toString()}');
+              redirect: (context, state) async {
+                final onboardingPrefs = OnboardingPreference();
+
                 if (appBloc.state.status == AppStatus.unauthenticated) {
-                  return "/login";
+                  return '/login'; // Muestra la pantalla de inicio de sesión si no está autenticado.
+                } else if (await onboardingPrefs.isFirstTimeLaunch()) {
+                  return '/onboard'; // Muestra Onboarding si es necesario.
+                } else {
+                  return '/product'; // Muestra la página de productos si está autenticado.
                 }
-                return "/product";
               },
             ),
             GoRoute(

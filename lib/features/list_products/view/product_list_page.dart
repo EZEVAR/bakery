@@ -135,6 +135,10 @@ class ProductListPage extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(
+                  20.0)), // Ajusta el radio según tus preferencias
+            ),
             backgroundColor: theme.primaryColorLight,
             title: const Text('Complete los campos'),
             content: Column(

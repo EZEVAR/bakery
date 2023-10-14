@@ -4,7 +4,6 @@ import 'package:bakery/auth/register/view/widgets/reg_name_field.dart';
 import 'package:bakery/auth/register/view/widgets/reg_phone_field.dart';
 import 'package:bakery/auth/register/view/widgets/signupbutton.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -64,22 +63,6 @@ class RegisterView extends StatelessWidget {
                     top: 10,
                     bottom: 10,
                   ),
-                  child: const Text(
-                    'Or',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                MaterialButton(
-                  child: const Text(
-                    'Already have an account? Login ',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                  onPressed: () => context.go('/login'),
                 ),
               ],
             ),

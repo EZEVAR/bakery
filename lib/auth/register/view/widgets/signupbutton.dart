@@ -14,14 +14,11 @@ class SignupField extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           child: MaterialButton(
             onPressed: () {
-              /// state.statusName.value
-              /// Recordar el usar el .value cuando se usa Formz
-              // context.read<RegisterCubit>().addUsuario(
-              //       state.nameInput.value,
-              //       state.lastnameInput.value,
-              //       state.emailInput.value,
-              //       state.phoneInput.value,
-              //     );
+              context.read<RegisterCubit>().addUsuario(
+                  state.nameInput.value,
+                  state.lastnameInput.value,
+                  state.emailInput.value,
+                  state.phoneInput.value);
             },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(80.0)),
@@ -39,7 +36,7 @@ class SignupField extends StatelessWidget {
                   ])),
               padding: const EdgeInsets.all(0),
               child: const Text(
-                "SIGN UP",
+                "Regristarse",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
