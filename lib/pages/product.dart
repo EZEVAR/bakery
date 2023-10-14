@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:go_router/go_router.dart';
 import '../app/bloc/app_bloc.dart';
 import '../tab_bar_view/birthday_tab.dart';
 import '../tab_bar_view/cakepiece_tab.dart';
@@ -24,8 +25,6 @@ class MyProductPage extends StatefulWidget {
 class MyProductPageState extends State<MyProductPage> {
   @override
   Widget build(BuildContext context) {
-    // final textTheme = Theme.of(context).textTheme;
-    // final user = context.select((AppBloc bloc) => bloc.state.user);
     List<Widget> cakeTabs = [
       CakeTabs(
           iconPath: 'assets/icons/birthday-cakeicon.png',
@@ -49,11 +48,10 @@ class MyProductPageState extends State<MyProductPage> {
         backgroundColor: theme.scaffoldBackgroundColor,
         appBar: AppBar(
           backgroundColor: theme.primaryColorLight,
-          title: const Text(
-            'Bakery',
-            style: TextStyle(
-              color: Color.fromARGB(255, 8, 8, 8),
-            ),
+          title: Image.asset(
+            'assets/onboard1bg.png',
+            width: 115,
+            height: 115,
           ),
           actions: [
             IconButton(
@@ -62,7 +60,9 @@ class MyProductPageState extends State<MyProductPage> {
                 color: Color.fromARGB(255, 12, 12, 12),
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.go('');
+              },
             ),
             IconButton(
               key: const Key('homePage_logout_iconButton'),
@@ -102,21 +102,41 @@ class MyProductPageState extends State<MyProductPage> {
                             autoPlayInterval: 5000,
                             isLoop: true,
                             children: [
-                              Image.asset(
-                                'assets/img1.jpg',
+                              SizedBox(
+                                width: double.infinity,
+                                child: Image.asset(
+                                  'assets/img1.jpg',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              Image.asset(
-                                'assets/img2.jpg',
+                              SizedBox(
+                                width: double.infinity,
+                                child: Image.asset(
+                                  'assets/img2.jpg',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              Image.asset(
-                                'assets/img3.jpg',
+                              SizedBox(
+                                width: double.infinity,
+                                child: Image.asset(
+                                  'assets/img3.jpg',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              Image.asset(
-                                'assets/img5.jpg',
+                              SizedBox(
+                                width: double.infinity,
+                                child: Image.asset(
+                                  'assets/img5.jpg',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              Image.asset(
-                                'assets/img6.jpg',
-                              ),
+                              SizedBox(
+                                width: double.infinity,
+                                child: Image.asset(
+                                  'assets/img6.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                              )
                             ],
                           ),
                         ),

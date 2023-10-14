@@ -11,8 +11,8 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final DatabaseRepository _databaseRepository;
 
-  Future<void> addUsuario(String name, String lastname, String email,
-      String password, String phone) async {
+  Future<void> addUsuario(
+      String name, String lastname, String email, String phone) async {
     emit(state.copyWith(loading: true, status: true));
 
     await _databaseRepository.addUsuario(name, lastname, email, phone);

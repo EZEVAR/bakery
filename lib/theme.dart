@@ -7,12 +7,12 @@ final theme = ThemeData(
 
   textTheme: GoogleFonts.openSansTextTheme(),
   primaryColorDark: const Color.fromARGB(255, 36, 1, 35),
-  primaryColorLight: const Color.fromARGB(255, 129, 111, 164),
+  primaryColorLight: Color.fromARGB(255, 164, 111, 145),
   primaryColor: const Color.fromARGB(255, 252, 51, 122),
   secondaryHeaderColor: const Color.fromARGB(255, 25, 32, 75),
   colorScheme: const ColorScheme.light(secondary: Color(0xFF009688)),
 
-  scaffoldBackgroundColor: const Color(0xFFE0F2F1),
+  scaffoldBackgroundColor: Color.fromARGB(255, 250, 250, 242),
   inputDecorationTheme: const InputDecorationTheme(
     focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
