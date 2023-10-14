@@ -13,7 +13,7 @@ class AppRouter {
   final AppBloc appBloc;
   final GoRouter _router;
 
-  AppRouter(AppBloc this.appBloc)
+  AppRouter(this.appBloc)
       : _router = GoRouter(
           navigatorKey: GlobalKey<NavigatorState>(),
           initialLocation: '/product',
